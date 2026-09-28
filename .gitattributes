@@ -1,0 +1,2 @@
+# Preserve exact submitted bytes so manifest hashes also match a Git checkout.
+* -text

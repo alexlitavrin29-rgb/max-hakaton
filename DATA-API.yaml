@@ -1,0 +1,194 @@
+# Учётные данные роли user передаются организаторам отдельно. См. docs/submission/ACCESS.md.
+schemaVersion: "1.0"
+solution:
+  name: "Точка опоры"
+api:
+  baseUrl: "https://135-106-229-210.sslip.io"
+  openapi: "./openapi.yaml"
+  defaultHeaders:
+    Accept: "application/json"
+checks:
+  - id: health
+    name: API и соединение с PostgreSQL
+    method: GET
+    path: /api/health
+    role: public
+    expected:
+      statusCodes: [200]
+      contentType: application/json
+      requiredFields: [status]
+      bodySchema: {type: object, properties: {status: {const: ok}}}
+    timeoutMs: 5000
+    repeatable: true
+  - id: production-mode
+    name: Публичный предпросмотр выключен
+    method: GET
+    path: /api/info
+    role: public
+    expected:
+      statusCodes: [200]
+      requiredFields: [preview, bot_name]
+      bodySchema: {type: object, properties: {preview: {const: false}}}
+    timeoutMs: 5000
+    repeatable: true
+  - id: place-search
+    name: Поиск населённого пункта
+    method: GET
+    path: /api/help/search
+    role: public
+    request:
+      query: {place: Казань, region: Татарстан}
+    expected:
+      statusCodes: [200]
+      requiredFields: [choices, total]
+      bodySchema: {type: object, properties: {total: {type: integer, minimum: 1}}}
+    timeoutMs: 5000
+    repeatable: true
+  - id: help-summary
+    name: Категории помощи и количество мест
+    method: GET
+    path: /api/help/summary
+    role: public
+    request:
+      query: {place: Казань, region: Татарстан}
+    expected:
+      statusCodes: [200]
+      requiredFields: [place, city_total, region_total, categories]
+    timeoutMs: 5000
+    repeatable: true
+  - id: help-list
+    name: Карточки помощи с условиями обращения
+    method: GET
+    path: /api/help/points
+    role: public
+    request:
+      query: {place: Казань, region: Татарстан, scope: city, limit: 2, offset: 0}
+    expected:
+      statusCodes: [200]
+      requiredFields: [items, total, scope, next_offset]
+      bodySchema: {type: object, properties: {items: {type: array, minItems: 1}}}
+    extract: {pointId: '$.items[0].id'}
+    timeoutMs: 5000
+    repeatable: true
+  - id: help-detail
+    name: Открытие найденной карточки по ID
+    method: GET
+    path: /api/help/points/{identifier}
+    role: public
+    dependsOn: [help-list]
+    request:
+      path: {identifier: '${pointId}'}
+    expected:
+      statusCodes: [200]
+      requiredFields: [id, name, city, categories, availability]
+      bodySchema: {type: object, properties: {availability: {const: contact_required}}}
+    timeoutMs: 5000
+    repeatable: true
+  - id: reject-invalid-limit
+    name: Валидация размера страницы
+    method: GET
+    path: /api/help/points
+    role: public
+    request:
+      query: {place: Казань, limit: 101}
+    expected: {statusCodes: [422], requiredFields: [detail]}
+    timeoutMs: 5000
+    repeatable: true
+  - id: reject-unsigned-launch
+    name: Защита входа без подписи MAX
+    method: POST
+    path: /api/session
+    role: public
+    request:
+      headers: {Content-Type: application/json}
+      body: {init_data: ''}
+    expected: {statusCodes: [401], requiredFields: [detail]}
+    timeoutMs: 5000
+    repeatable: true
+  - id: reject-unsigned-favorites
+    name: Личные сохранения недоступны анонимно
+    method: GET
+    path: /api/favorites
+    role: public
+    expected: {statusCodes: [401], requiredFields: [detail]}
+    timeoutMs: 5000
+    repeatable: true
+  - id: open-help
+    name: Вход в поиск помощи через общий движок
+    method: POST
+    path: /api/action
+    role: user
+    description: Нужен действующий Bearer сеанса MAX. Вызовы action с интервалом не менее 0,5 с.
+    request:
+      headers: {Content-Type: application/json}
+      body: {section: help}
+    expected: {statusCodes: [200], requiredFields: [section, cards, notices, controls, summary]}
+    timeoutMs: 120000
+    repeatable: true
+  - id: open-work
+    name: Вход в поиск вакансий
+    method: POST
+    path: /api/action
+    role: user
+    dependsOn: [open-help]
+    request:
+      headers: {Content-Type: application/json}
+      body: {section: work}
+    expected: {statusCodes: [200], requiredFields: [section, cards, notices, controls, summary]}
+    timeoutMs: 120000
+    repeatable: true
+  - id: open-rental
+    name: Вход в поиск жилья
+    method: POST
+    path: /api/action
+    role: user
+    dependsOn: [open-work]
+    request:
+      headers: {Content-Type: application/json}
+      body: {section: rental}
+    expected: {statusCodes: [200], requiredFields: [section, cards, notices, controls, summary]}
+    timeoutMs: 120000
+    repeatable: true
+  - id: read-favorites
+    name: Чтение личного списка Моё
+    method: GET
+    path: /api/favorites
+    role: user
+    expected: {statusCodes: [200], requiredFields: [cards]}
+    timeoutMs: 5000
+    repeatable: true
+  - id: save-answer
+    name: Открытие и сохранение справочного ответа
+    description: Только на выделенном тестовом аккаунте. После проверки удаляется сохранение этого ответа.
+    method: POST
+    path: /api/material
+    role: user
+    request:
+      headers: {Content-Type: application/json}
+      body: {node_id: exit_docs, save: true}
+    expected: {statusCodes: [200], requiredFields: [card, saved]}
+    extract: {favoriteId: '$.card.favorite_id'}
+    timeoutMs: 5000
+    repeatable: true
+  - id: read-saved-answer
+    name: Сохранённый ответ читается из Моего
+    method: GET
+    path: /api/favorites
+    role: user
+    dependsOn: [save-answer]
+    expected:
+      statusCodes: [200]
+      requiredFields: [cards]
+      bodySchema: {type: object, properties: {cards: {type: array, minItems: 1}}}
+    timeoutMs: 5000
+    repeatable: true
+cleanup:
+  - id: remove-test-answer
+    method: POST
+    path: /api/favorites
+    role: user
+    request:
+      headers: {Content-Type: application/json}
+      body: {card_id: '${favoriteId}', saved: false}
+    expected: {statusCodes: [200], requiredFields: [cards]}
+    timeoutMs: 5000

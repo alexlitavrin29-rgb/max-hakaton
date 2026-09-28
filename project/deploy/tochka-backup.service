@@ -1,0 +1,9 @@
+[Unit]
+Description=Tochka database and configuration backup
+Requires=docker.service
+After=docker.service
+
+[Service]
+Type=oneshot
+ExecStart=/bin/sh /opt/tochka/project/deploy/backup.sh
+UMask=0077

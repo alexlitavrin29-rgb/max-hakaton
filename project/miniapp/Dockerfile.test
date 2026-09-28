@@ -1,0 +1,7 @@
+FROM support-router-miniapp:latest
+USER root
+COPY requirements-dev.txt /tmp/requirements-dev.txt
+RUN pip install --no-cache-dir -r /tmp/requirements-dev.txt
+USER appuser
+WORKDIR /repo
+CMD ["python", "-m", "pytest", "-q", "-p", "no:cacheprovider", "project/miniapp/tests", "project/llm/tests", "project/admin/tests/test_quality_channels.py", "project/admin/tests/test_rental.py", "--basetemp=/tmp/miniapp-pytest"]

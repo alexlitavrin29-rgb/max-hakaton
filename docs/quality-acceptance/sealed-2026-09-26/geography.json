@@ -1,0 +1,539 @@
+{
+  "notice": "All identifiers/codes/slugs are synthetic fixture-only values, NOT production geographic identifiers. Names provide controlled ambiguity; no live endpoint may receive these IDs.",
+  "places": [
+    {
+      "id": "test-place-01",
+      "name": "Москва",
+      "prepositional": "Москве",
+      "kind": "city",
+      "region_code": "99990001",
+      "location_id": 900001,
+      "slug": "fixture-city-01",
+      "synthetic": true,
+      "region": "Москва",
+      "district": "",
+      "native_work": {
+        "name": "Москва",
+        "type": "г",
+        "region": "Москва",
+        "district": "",
+        "parent": "Москва",
+        "source_id": "test-place-01",
+        "code": "99990001",
+        "kind": "city",
+        "aliases": "Москва"
+      },
+      "native_housing": {
+        "name": "Москва",
+        "region": "Москва",
+        "slug": "fixture-city-01",
+        "location_id": 900001
+      },
+      "location_queries": [
+        "Москва",
+        "Москве"
+      ]
+    },
+    {
+      "id": "test-place-02",
+      "name": "Казань",
+      "prepositional": "Казани",
+      "kind": "city",
+      "region_code": "99990002",
+      "location_id": 900002,
+      "slug": "fixture-city-02",
+      "synthetic": true,
+      "region": "Республика Татарстан",
+      "district": "",
+      "native_work": {
+        "name": "Казань",
+        "type": "г",
+        "region": "Республика Татарстан",
+        "district": "",
+        "parent": "Республика Татарстан",
+        "source_id": "test-place-02",
+        "code": "99990002",
+        "kind": "city",
+        "aliases": "Казань"
+      },
+      "native_housing": {
+        "name": "Казань",
+        "region": "Республика Татарстан",
+        "slug": "fixture-city-02",
+        "location_id": 900002
+      },
+      "location_queries": [
+        "Казань",
+        "Казани"
+      ]
+    },
+    {
+      "id": "test-place-03",
+      "name": "Томск",
+      "prepositional": "Томске",
+      "kind": "city",
+      "region_code": "99990003",
+      "location_id": 900003,
+      "slug": "fixture-city-03",
+      "synthetic": true,
+      "region": "Томская область",
+      "district": "",
+      "native_work": {
+        "name": "Томск",
+        "type": "г",
+        "region": "Томская область",
+        "district": "",
+        "parent": "Томская область",
+        "source_id": "test-place-03",
+        "code": "99990003",
+        "kind": "city",
+        "aliases": "Томск"
+      },
+      "native_housing": {
+        "name": "Томск",
+        "region": "Томская область",
+        "slug": "fixture-city-03",
+        "location_id": 900003
+      },
+      "location_queries": [
+        "Томск",
+        "Томске"
+      ]
+    },
+    {
+      "id": "test-place-04",
+      "name": "Пермь",
+      "prepositional": "Перми",
+      "kind": "city",
+      "region_code": "99990004",
+      "location_id": 900004,
+      "slug": "fixture-city-04",
+      "synthetic": true,
+      "region": "Пермский край",
+      "district": "",
+      "native_work": {
+        "name": "Пермь",
+        "type": "г",
+        "region": "Пермский край",
+        "district": "",
+        "parent": "Пермский край",
+        "source_id": "test-place-04",
+        "code": "99990004",
+        "kind": "city",
+        "aliases": "Пермь"
+      },
+      "native_housing": {
+        "name": "Пермь",
+        "region": "Пермский край",
+        "slug": "fixture-city-04",
+        "location_id": 900004
+      },
+      "location_queries": [
+        "Пермь",
+        "Перми"
+      ]
+    },
+    {
+      "id": "test-place-05",
+      "name": "Омск",
+      "prepositional": "Омске",
+      "kind": "city",
+      "region_code": "99990005",
+      "location_id": 900005,
+      "slug": "fixture-city-05",
+      "synthetic": true,
+      "region": "Омская область",
+      "district": "",
+      "native_work": {
+        "name": "Омск",
+        "type": "г",
+        "region": "Омская область",
+        "district": "",
+        "parent": "Омская область",
+        "source_id": "test-place-05",
+        "code": "99990005",
+        "kind": "city",
+        "aliases": "Омск"
+      },
+      "native_housing": {
+        "name": "Омск",
+        "region": "Омская область",
+        "slug": "fixture-city-05",
+        "location_id": 900005
+      },
+      "location_queries": [
+        "Омск",
+        "Омске"
+      ]
+    },
+    {
+      "id": "test-place-06",
+      "name": "Тверь",
+      "prepositional": "Твери",
+      "kind": "city",
+      "region_code": "99990006",
+      "location_id": 900006,
+      "slug": "fixture-city-06",
+      "synthetic": true,
+      "region": "Тверская область",
+      "district": "",
+      "native_work": {
+        "name": "Тверь",
+        "type": "г",
+        "region": "Тверская область",
+        "district": "",
+        "parent": "Тверская область",
+        "source_id": "test-place-06",
+        "code": "99990006",
+        "kind": "city",
+        "aliases": "Тверь"
+      },
+      "native_housing": {
+        "name": "Тверь",
+        "region": "Тверская область",
+        "slug": "fixture-city-06",
+        "location_id": 900006
+      },
+      "location_queries": [
+        "Тверь",
+        "Твери"
+      ]
+    },
+    {
+      "id": "test-place-07",
+      "name": "Самара",
+      "prepositional": "Самаре",
+      "kind": "city",
+      "region_code": "99990007",
+      "location_id": 900007,
+      "slug": "fixture-city-07",
+      "synthetic": true,
+      "region": "Самарская область",
+      "district": "",
+      "native_work": {
+        "name": "Самара",
+        "type": "г",
+        "region": "Самарская область",
+        "district": "",
+        "parent": "Самарская область",
+        "source_id": "test-place-07",
+        "code": "99990007",
+        "kind": "city",
+        "aliases": "Самара"
+      },
+      "native_housing": {
+        "name": "Самара",
+        "region": "Самарская область",
+        "slug": "fixture-city-07",
+        "location_id": 900007
+      },
+      "location_queries": [
+        "Самара",
+        "Самаре"
+      ]
+    },
+    {
+      "id": "test-place-08",
+      "name": "Вологда",
+      "prepositional": "Вологде",
+      "kind": "city",
+      "region_code": "99990008",
+      "location_id": 900008,
+      "slug": "fixture-city-08",
+      "synthetic": true,
+      "region": "Вологодская область",
+      "district": "",
+      "native_work": {
+        "name": "Вологда",
+        "type": "г",
+        "region": "Вологодская область",
+        "district": "",
+        "parent": "Вологодская область",
+        "source_id": "test-place-08",
+        "code": "99990008",
+        "kind": "city",
+        "aliases": "Вологда"
+      },
+      "native_housing": {
+        "name": "Вологда",
+        "region": "Вологодская область",
+        "slug": "fixture-city-08",
+        "location_id": 900008
+      },
+      "location_queries": [
+        "Вологда",
+        "Вологде"
+      ]
+    },
+    {
+      "id": "test-place-09",
+      "name": "Тула",
+      "prepositional": "Туле",
+      "kind": "city",
+      "region_code": "99990009",
+      "location_id": 900009,
+      "slug": "fixture-city-09",
+      "synthetic": true,
+      "region": "Тульская область",
+      "district": "",
+      "native_work": {
+        "name": "Тула",
+        "type": "г",
+        "region": "Тульская область",
+        "district": "",
+        "parent": "Тульская область",
+        "source_id": "test-place-09",
+        "code": "99990009",
+        "kind": "city",
+        "aliases": "Тула"
+      },
+      "native_housing": {
+        "name": "Тула",
+        "region": "Тульская область",
+        "slug": "fixture-city-09",
+        "location_id": 900009
+      },
+      "location_queries": [
+        "Тула",
+        "Туле"
+      ]
+    },
+    {
+      "id": "test-place-10",
+      "name": "Киров",
+      "prepositional": "Кирове",
+      "kind": "city",
+      "region_code": "99990010",
+      "location_id": 900010,
+      "slug": "fixture-city-10",
+      "synthetic": true,
+      "region": "Кировская область",
+      "district": "",
+      "native_work": {
+        "name": "Киров",
+        "type": "г",
+        "region": "Кировская область",
+        "district": "",
+        "parent": "Кировская область",
+        "source_id": "test-place-10",
+        "code": "99990010",
+        "kind": "city",
+        "aliases": "Киров"
+      },
+      "native_housing": {
+        "name": "Киров",
+        "region": "Кировская область",
+        "slug": "fixture-city-10",
+        "location_id": 900010
+      },
+      "location_queries": [
+        "Киров",
+        "Кирове"
+      ]
+    },
+    {
+      "id": "test-place-11",
+      "name": "Орёл",
+      "prepositional": "Орле",
+      "kind": "city",
+      "region_code": "99990011",
+      "location_id": 900011,
+      "slug": "fixture-city-11",
+      "synthetic": true,
+      "region": "Орловская область",
+      "district": "",
+      "native_work": {
+        "name": "Орёл",
+        "type": "г",
+        "region": "Орловская область",
+        "district": "",
+        "parent": "Орловская область",
+        "source_id": "test-place-11",
+        "code": "99990011",
+        "kind": "city",
+        "aliases": "Орёл"
+      },
+      "native_housing": {
+        "name": "Орёл",
+        "region": "Орловская область",
+        "slug": "fixture-city-11",
+        "location_id": 900011
+      },
+      "location_queries": [
+        "Орёл",
+        "Орле"
+      ]
+    },
+    {
+      "id": "test-place-12",
+      "name": "Курск",
+      "prepositional": "Курске",
+      "kind": "city",
+      "region_code": "99990012",
+      "location_id": 900012,
+      "slug": "fixture-city-12",
+      "synthetic": true,
+      "region": "Курская область",
+      "district": "",
+      "native_work": {
+        "name": "Курск",
+        "type": "г",
+        "region": "Курская область",
+        "district": "",
+        "parent": "Курская область",
+        "source_id": "test-place-12",
+        "code": "99990012",
+        "kind": "city",
+        "aliases": "Курск"
+      },
+      "native_housing": {
+        "name": "Курск",
+        "region": "Курская область",
+        "slug": "fixture-city-12",
+        "location_id": 900012
+      },
+      "location_queries": [
+        "Курск",
+        "Курске"
+      ]
+    },
+    {
+      "id": "test-town-sovetsk-a",
+      "name": "Советск, Кировская область",
+      "prepositional": "Советске Кировской области",
+      "kind": "city",
+      "region_code": "99990101",
+      "location_id": 900101,
+      "slug": "fixture-sovetsk-kirov",
+      "synthetic": true,
+      "region": "Кировская область",
+      "district": "",
+      "native_work": {
+        "name": "Советск",
+        "type": "г",
+        "region": "Кировская область",
+        "district": "",
+        "parent": "Кировская область",
+        "source_id": "test-town-sovetsk-a",
+        "code": "99990101",
+        "kind": "city",
+        "aliases": "Советск, Кировская область"
+      },
+      "native_housing": {
+        "name": "Советск",
+        "region": "Кировская область",
+        "slug": "fixture-sovetsk-kirov",
+        "location_id": 900101
+      },
+      "location_queries": [
+        "Советск, Кировская область",
+        "Советск",
+        "Советске Кировской области",
+        "Советске"
+      ]
+    },
+    {
+      "id": "test-town-sovetsk-b",
+      "name": "Советск, Калининградская область",
+      "prepositional": "Советске Калининградской области",
+      "kind": "city",
+      "region_code": "99990102",
+      "location_id": 900102,
+      "slug": "fixture-sovetsk-kaliningrad",
+      "synthetic": true,
+      "region": "Калининградская область",
+      "district": "",
+      "native_work": {
+        "name": "Советск",
+        "type": "г",
+        "region": "Калининградская область",
+        "district": "",
+        "parent": "Калининградская область",
+        "source_id": "test-town-sovetsk-b",
+        "code": "99990102",
+        "kind": "city",
+        "aliases": "Советск, Калининградская область"
+      },
+      "native_housing": {
+        "name": "Советск",
+        "region": "Калининградская область",
+        "slug": "fixture-sovetsk-kaliningrad",
+        "location_id": 900102
+      },
+      "location_queries": [
+        "Советск, Калининградская область",
+        "Советск",
+        "Советске Калининградской области",
+        "Советске"
+      ]
+    },
+    {
+      "id": "test-town-pushkino",
+      "name": "Пушкино, Московская область",
+      "prepositional": "городе Пушкино Московской области",
+      "kind": "city",
+      "region_code": "99990103",
+      "location_id": 900103,
+      "slug": "fixture-pushkino-city",
+      "synthetic": true,
+      "region": "Московская область",
+      "district": "",
+      "native_work": {
+        "name": "Пушкино",
+        "type": "г",
+        "region": "Московская область",
+        "district": "",
+        "parent": "Московская область",
+        "source_id": "test-town-pushkino",
+        "code": "99990103",
+        "kind": "city",
+        "aliases": "Пушкино, Московская область"
+      },
+      "native_housing": {
+        "name": "Пушкино",
+        "region": "Московская область",
+        "slug": "fixture-pushkino-city",
+        "location_id": 900103
+      },
+      "location_queries": [
+        "Пушкино, Московская область",
+        "Пушкино",
+        "городе Пушкино Московской области"
+      ]
+    },
+    {
+      "id": "test-village-pushkino",
+      "name": "Пушкино, синтетическое село",
+      "prepositional": "селе Пушкино из тестового справочника",
+      "kind": "village",
+      "region_code": "99990104",
+      "location_id": 900104,
+      "slug": "fixture-pushkino-village",
+      "synthetic": true,
+      "region": "Синтетический регион",
+      "district": "",
+      "native_work": {
+        "name": "Пушкино",
+        "type": "с",
+        "region": "Синтетический регион",
+        "district": "",
+        "parent": "Синтетический регион",
+        "source_id": "test-village-pushkino",
+        "code": "99990104",
+        "kind": "village",
+        "aliases": "Пушкино, синтетическое село"
+      },
+      "native_housing": {
+        "name": "Пушкино",
+        "region": "Синтетический регион",
+        "slug": "fixture-pushkino-village",
+        "location_id": 900104
+      },
+      "location_queries": [
+        "Пушкино, синтетическое село",
+        "Пушкино",
+        "селе Пушкино из тестового справочника"
+      ]
+    }
+  ]
+}

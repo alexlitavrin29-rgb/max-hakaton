@@ -1,0 +1,3 @@
+-r requirements-llm.txt
+asyncpg==0.31.0
+tzdata==2025.2

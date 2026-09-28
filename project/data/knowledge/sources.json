@@ -1,0 +1,121 @@
+{
+  "career": {
+    "title": "Бесплатный тест «Траектория»",
+    "url": "https://www.traektoriya.online/",
+    "scope": "Россия, профориентация; негосударственный сервис",
+    "checked": "2026-09-22",
+    "verification": "Содержание проверено через веб-источник; доступность может зависеть от сети"
+  },
+  "catalog": {
+    "title": "Каталог вузов и колледжей",
+    "url": "https://postupi.online/",
+    "scope": "Негосударственный каталог, условия сверять на сайте учебного заведения",
+    "checked": "2026-09-22",
+    "verification": "HTTP 200 и просмотр содержания"
+  },
+  "education": {
+    "title": "Минобрнауки: вопросы об образовании",
+    "url": "https://minobrnauki.gov.ru/open_ministry/reception/faq/",
+    "scope": "Россия; справочная навигация, не индивидуальное решение о поступлении",
+    "checked": "2026-09-22",
+    "verification": "HTTP 200 и просмотр содержания"
+  },
+  "pension": {
+    "title": "СФР: пенсия по потере кормильца",
+    "url": "https://sfr.gov.ru/grazhdanam/pensionnoe_obespechenie/strahovaya_pensiya_po_sluchayu_poteri_kormilca/pravo/",
+    "scope": "Россия; условия страховой пенсии, не всех выплат",
+    "checked": "2026-09-22",
+    "verification": "Содержание проверено через веб-источник; доступность может зависеть от сети"
+  },
+  "sfr": {
+    "title": "Социальный фонд России",
+    "url": "https://sfr.gov.ru/",
+    "scope": "Россия; выбор регионального отделения и обращения",
+    "checked": "2026-09-22",
+    "verification": "Содержание проверено через веб-источник; доступность может зависеть от сети"
+  },
+  "housing": {
+    "title": "Правительство: обеспечение сирот жильём",
+    "url": "https://government.ru/docs/36379/",
+    "scope": "Россия; общая информация о формировании списка, не персональная очередь",
+    "checked": "2026-09-22",
+    "verification": "Содержание проверено через веб-источник; доступность может зависеть от сети"
+  },
+  "forms": {
+    "title": "Формы семейного устройства",
+    "url": "https://www.usynovite.ru/adoption_/",
+    "scope": "Россия, профильный информационный проект",
+    "checked": "2026-09-22",
+    "verification": "HTTP 200 и просмотр содержания"
+  },
+  "adoption": {
+    "title": "Порядок усыновления",
+    "url": "https://www.usynovite.ru/adoption/adoption/adoption/",
+    "scope": "Ориентир по этапам; точный актуальный перечень и сроки уточнять в органе опеки",
+    "checked": "2026-09-22",
+    "verification": "HTTP 200 и просмотр содержания"
+  },
+  "guardianship": {
+    "title": "Вопросы об опеке",
+    "url": "https://www.usynovite.ru/consult/faq/opeka/",
+    "scope": "Россия, общие различия форм устройства",
+    "checked": "2026-09-22",
+    "verification": "HTTP 200 и просмотр содержания"
+  },
+  "children": {
+    "title": "Открытый банк информации о детях",
+    "url": "https://www.usynovite.ru/db/",
+    "scope": "Открытая информация; знакомство и документы — через оператора",
+    "checked": "2026-09-22",
+    "verification": "HTTP 200 и просмотр содержания"
+  },
+  "operators": {
+    "title": "Региональные операторы",
+    "url": "https://www.usynovite.ru/structure/",
+    "scope": "Россия, справочник региональных операторов",
+    "checked": "2026-09-22",
+    "verification": "HTTP 200 и просмотр содержания"
+  },
+  "contacts": {
+    "title": "Куда обратиться будущему родителю",
+    "url": "https://www.usynovite.ru/contacts/",
+    "scope": "Россия, навигация по обращениям",
+    "checked": "2026-09-22",
+    "verification": "HTTP 200 и просмотр содержания"
+  },
+  "money": {
+    "title": "«Финансовая культура», Банк России",
+    "url": "https://fincult.info/",
+    "scope": "Финансовая грамотность, не инвестиционная рекомендация",
+    "checked": "2026-09-22",
+    "verification": "Содержание проверено через веб-источник; доступность может зависеть от сети"
+  },
+  "hh": {
+    "title": "Посмотреть вакансии на HeadHunter",
+    "url": "https://hh.ru/",
+    "scope": "Внешний поиск; интеграция HH API не подключена",
+    "checked": "2026-09-22",
+    "verification": "HTTP 200 и просмотр содержания"
+  },
+  "emergency": {
+    "title": "МЧС: экстренная помощь",
+    "url": "https://mchs.gov.ru/deyatelnost/bezopasnost-grazhdan/kak-pravilno-vyzvat-skoruyu_5",
+    "scope": "Россия, номер 112",
+    "checked": "2026-09-22",
+    "verification": "HTTP 200 и просмотр содержания"
+  },
+  "registry16": {
+    "title": "Реестр социальных услуг Татарстана",
+    "url": "https://mtsz.tatarstan.ru/reestr-postavshchikov-sotsialnih-uslug.htm",
+    "scope": "Республика Татарстан; наличие конкретной услуги и мест не проверяется",
+    "checked": "2026-09-22",
+    "verification": "HTTP 200 и просмотр содержания"
+  },
+  "social": {
+    "title": "Минтруд: как обратиться за социальной помощью",
+    "url": "https://mintrud.gov.ru/docs/mintrud/protection/252",
+    "scope": "Россия; общий порядок обращения, не реестр организаций",
+    "checked": "2026-09-22",
+    "verification": "Содержание проверено через веб-источник; доступность может зависеть от сети"
+  }
+}

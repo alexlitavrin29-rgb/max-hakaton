@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Точка опоры · Редактор</title><link rel="stylesheet" href="/static/style.css"><script defer src="/static/app.js"></script></head>
+<body>
+<aside class="sidebar">
+  <a class="brand" href="/"><span class="brand-mark">т<span>о</span></span><span>Точка опоры<small>мастерская бота</small></span></a>
+  <div class="workspace-label"><span class="status-dot"></span> Локальное пространство</div>
+  <nav id="navigation" aria-label="Разделы"></nav>
+  <div class="sidebar-bottom"><span class="avatar">А</span><div>Алекс<small>Владелец продукта</small></div><span class="local-lock">⌂</span></div>
+</aside>
+<div class="app-shell">
+  <header class="topbar"><div><span class="eyebrow">РЕДАКТОР СЦЕНАРИЕВ</span><div class="version-line"><span id="save-status">Загрузка…</span><span class="divider">/</span><span id="live-version"></span></div></div><div class="top-actions"><button id="preview-toggle" class="button secondary">◷ Тестовый чат</button><button id="save" class="button secondary">Сохранить черновик</button><button id="publish" class="button primary">Опубликовать <span>↗</span></button></div></header>
+  <div id="notice" class="notice" hidden role="status"></div>
+  <main id="main"></main>
+</div>
+<aside id="preview" class="preview" hidden aria-labelledby="chat-title">
+  <header><div><span class="eyebrow">ТЕСТОВЫЙ ЧАТ</span><h2 id="chat-title">Проверить диалог</h2></div><div class="preview-actions"><button id="preview-size" data-action="resize-preview" class="button secondary" aria-pressed="true">Боковая панель</button><button data-action="close-preview" class="icon-button" aria-label="Закрыть чат">×</button></div></header>
+  <div class="preview-note">Текущий черновик. Сообщения не уходят в MAX, напоминания здесь тестовые.</div>
+  <div class="preview-tools"><button class="text-button" data-action="reset-chat">↺ Начать заново</button><span id="preview-node"></span><div class="chat-font-tools" role="group" aria-label="Размер текста"><button class="icon-button" data-action="chat-font-down" aria-label="Уменьшить текст">А−</button><output id="chat-font-size" aria-live="polite">18 px</output><button class="icon-button" data-action="chat-font-up" aria-label="Увеличить текст">А+</button></div></div>
+  <div id="chat-error" class="chat-error" role="alert" hidden></div>
+  <div id="chat-log" class="chat-log" aria-live="polite"></div>
+  <form id="chat-form"><label class="sr-only" for="chat-input">Сообщение боту</label><textarea id="chat-input" placeholder="Напишите как пользователь…" rows="2" maxlength="2500"></textarea><button class="send-button" aria-label="Отправить">↑</button></form>
+  <details class="diagnostics"><summary>Почему бот так ответил <span>LLM и шаги</span></summary><div id="trace"></div></details>
+</aside>
+<dialog id="modal"><form method="dialog" class="modal-shell"><div id="modal-content"></div></form></dialog>
+<div id="toast" role="status"></div>
+</body></html>

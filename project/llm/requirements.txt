@@ -1,0 +1,7 @@
+aiogram==3.27.0
+-r requirements-llm.txt
+asyncpg==0.31.0
+redis[hiredis]==7.4.0
+aio-pika==9.6.2
+alembic==1.18.5
+sqlalchemy==2.0.51

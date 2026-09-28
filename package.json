@@ -1,0 +1,10 @@
+{
+  "private": true,
+  "scripts": {
+    "test": "node --test project/miniapp/tests/network.test.cjs",
+    "test:browser": "node tools/submission/browser_regression.cjs"
+  },
+  "devDependencies": {
+    "playwright": "1.59.1"
+  }
+}

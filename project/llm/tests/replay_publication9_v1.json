@@ -1,0 +1,24 @@
+{
+  "version": "publication-9-2026-09-28",
+  "review_basis": "Age is optional for work search; first known city starts a Trudvsem lookup. Source failures are retried once. Card outcomes are assessed against the sealed synthetic card facts.",
+  "cases": {
+    "W0001": {
+      "region": "99990001", "calls_by_turn": [2, 1], "city": "Москва",
+      "last_fields": {"query": "упаковщик"},
+      "reject": ["W0001-T02-C3", "W0001-T02-C4"],
+      "consider": ["W0001-T02-C1", "W0001-T02-C2", "W0001-T02-C5"]
+    },
+    "W0034": {
+      "region": "99990006", "calls_by_turn": [2, 1, 1], "city": "Тверь",
+      "last_fields": {"employment": "temporary", "schedule": "удалённая работа"},
+      "reject": ["W0034-T03-C3", "W0034-T03-C4"],
+      "consider": ["W0034-T03-C1", "W0034-T03-C2", "W0034-T03-C5"]
+    },
+    "W0082": {
+      "region": "99990011", "calls_by_turn": [2, 1], "city": "Орёл",
+      "last_fields": {"schedule": "Подходит только гибкий график."},
+      "reject": ["W0082-T02-C3"],
+      "consider": ["W0082-T02-C1", "W0082-T02-C2", "W0082-T02-C4", "W0082-T02-C5"]
+    }
+  }
+}

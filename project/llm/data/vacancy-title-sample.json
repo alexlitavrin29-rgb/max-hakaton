@@ -1,0 +1,507 @@
+{
+  "source": "https://opendata.trudvsem.ru/api/v1/vacancies",
+  "downloaded": "2026-09-23",
+  "total": 519638,
+  "items": [
+    {
+      "id": "1fae8c69-b722-11f1-80a9-795f97aab242",
+      "title": "Специалист по работе с молодёжью",
+      "url": "https://trudvsem.ru/vacancy/card/1086913000107/1fae8c69-b722-11f1-80a9-795f97aab242"
+    },
+    {
+      "id": "76036bf0-df0d-11f0-a9f1-77001f7c3eff",
+      "title": "Механик по выпуску автотранспорта",
+      "url": "https://trudvsem.ru/vacancy/card/1023500873186/76036bf0-df0d-11f0-a9f1-77001f7c3eff"
+    },
+    {
+      "id": "81d8bb98-df14-11f0-8e71-0983c92ae730",
+      "title": "Слесарь-сантехник",
+      "url": "https://trudvsem.ru/vacancy/card/1023500873186/81d8bb98-df14-11f0-8e71-0983c92ae730"
+    },
+    {
+      "id": "516f75e8-5a87-11f1-83c2-3f98913fdff4",
+      "title": "дворник",
+      "url": "https://trudvsem.ru/vacancy/card/1025901603078/516f75e8-5a87-11f1-83c2-3f98913fdff4"
+    },
+    {
+      "id": "088a7c18-b731-11f1-b9fd-bbcf99b669df",
+      "title": "Начальник отделения",
+      "url": "https://trudvsem.ru/vacancy/card/6504f510-632b-11ec-83c4-4febb26dc4ec/088a7c18-b731-11f1-b9fd-bbcf99b669df"
+    },
+    {
+      "id": "f8d28628-5a86-11f1-a732-0994475eada7",
+      "title": "уборщик служебных помещений",
+      "url": "https://trudvsem.ru/vacancy/card/1025901603078/f8d28628-5a86-11f1-a732-0994475eada7"
+    },
+    {
+      "id": "b57d2a68-6eaa-11f0-9a09-cb26dff57dd7",
+      "title": "Кассир",
+      "url": "https://trudvsem.ru/vacancy/card/324645700107560/b57d2a68-6eaa-11f0-9a09-cb26dff57dd7"
+    },
+    {
+      "id": "fbe641f8-0e2b-11f1-90b7-e311daf75900",
+      "title": "Повар",
+      "url": "https://trudvsem.ru/vacancy/card/324645700107560/fbe641f8-0e2b-11f1-90b7-e311daf75900"
+    },
+    {
+      "id": "f087e4e8-b73a-11f1-b291-e7968767fb9b",
+      "title": "Специалист",
+      "url": "https://trudvsem.ru/vacancy/card/1152130001374/f087e4e8-b73a-11f1-b291-e7968767fb9b"
+    },
+    {
+      "id": "1d629bb8-6eab-11f0-8a48-d549be31d974",
+      "title": "Кухонный рабочий",
+      "url": "https://trudvsem.ru/vacancy/card/324645700107560/1d629bb8-6eab-11f0-8a48-d549be31d974"
+    },
+    {
+      "id": "eb5ccdf8-b73a-11f1-b291-e7968767fb9b",
+      "title": "Учитель русского языка и литературы",
+      "url": "https://trudvsem.ru/vacancy/card/1022200510870/eb5ccdf8-b73a-11f1-b291-e7968767fb9b"
+    },
+    {
+      "id": "f599a8b8-5277-11f1-8535-e714bd19e8c4",
+      "title": "Слесарь по контрольно-измерительным приборам и автоматике 6 разряд (64239)",
+      "url": "https://trudvsem.ru/vacancy/card/1161447058772/f599a8b8-5277-11f1-8535-e714bd19e8c4"
+    },
+    {
+      "id": "a5905b08-f83d-11f0-ba7d-9959eb3311ba",
+      "title": "Слесарь-ремонтник 5 разряд (64174)",
+      "url": "https://trudvsem.ru/vacancy/card/1161447058772/a5905b08-f83d-11f0-ba7d-9959eb3311ba"
+    },
+    {
+      "id": "71a12ec8-6fd2-11f1-80bc-f5dd2a282d14",
+      "title": "Швея",
+      "url": "https://trudvsem.ru/vacancy/card/1113316000632/71a12ec8-6fd2-11f1-80bc-f5dd2a282d14"
+    },
+    {
+      "id": "f086c7d8-2cdf-11f1-a3e3-e78cce9ac03b",
+      "title": "Слесарь-ремонтник 6 разряд (64011)",
+      "url": "https://trudvsem.ru/vacancy/card/1161447058772/f086c7d8-2cdf-11f1-a3e3-e78cce9ac03b"
+    },
+    {
+      "id": "3fb50808-6fd2-11f1-90b8-c7c4ad68b305",
+      "title": "упаковщик",
+      "url": "https://trudvsem.ru/vacancy/card/1113316000632/3fb50808-6fd2-11f1-90b8-c7c4ad68b305"
+    },
+    {
+      "id": "38c42ec0-f83d-11f0-ba7d-9959eb3311ba",
+      "title": "Электрослесарь по ремонту оборудования 5 разряд (64438)",
+      "url": "https://trudvsem.ru/vacancy/card/1161447058772/38c42ec0-f83d-11f0-ba7d-9959eb3311ba"
+    },
+    {
+      "id": "d6c308b8-6fd1-11f1-90b8-c7c4ad68b305",
+      "title": "переводчик",
+      "url": "https://trudvsem.ru/vacancy/card/1113316000632/d6c308b8-6fd1-11f1-90b8-c7c4ad68b305"
+    },
+    {
+      "id": "ce5f7ca8-7f33-11f1-af90-fdfd96230151",
+      "title": "Инспектор",
+      "url": "https://trudvsem.ru/vacancy/card/1055525021243/ce5f7ca8-7f33-11f1-af90-fdfd96230151"
+    },
+    {
+      "id": "bd018f08-6fd1-11f1-80bc-f5dd2a282d14",
+      "title": "гладильщик",
+      "url": "https://trudvsem.ru/vacancy/card/1113316000632/bd018f08-6fd1-11f1-80bc-f5dd2a282d14"
+    },
+    {
+      "id": "f98fcda8-3c74-11f1-96a1-bd257e890366",
+      "title": "Наладчик контрольно-измерительных приборов и автоматики 6 разряд (64204)",
+      "url": "https://trudvsem.ru/vacancy/card/1161447058772/f98fcda8-3c74-11f1-96a1-bd257e890366"
+    },
+    {
+      "id": "a7e903f8-6fd1-11f1-a94c-e9cc8f291f65",
+      "title": "закройщик",
+      "url": "https://trudvsem.ru/vacancy/card/1113316000632/a7e903f8-6fd1-11f1-a94c-e9cc8f291f65"
+    },
+    {
+      "id": "ba9c01d0-0c96-11f1-8053-7d02f7782fc0",
+      "title": "Слесарь-ремонтник 5 разряд (64136)",
+      "url": "https://trudvsem.ru/vacancy/card/1161447058772/ba9c01d0-0c96-11f1-8053-7d02f7782fc0"
+    },
+    {
+      "id": "f48cf518-ac47-11f1-86d3-9d322d9153e2",
+      "title": "Экономист",
+      "url": "https://trudvsem.ru/vacancy/card/a5f35810-5fc1-11ef-bb43-e7d0d2cf29b1/f48cf518-ac47-11f1-86d3-9d322d9153e2"
+    },
+    {
+      "id": "6fe2e188-63e0-11f1-bd45-5b3fedaf23dc",
+      "title": "Уборщик производственных и служебных помещений 2 разряд (64221)",
+      "url": "https://trudvsem.ru/vacancy/card/1161447058772/6fe2e188-63e0-11f1-bd45-5b3fedaf23dc"
+    },
+    {
+      "id": "2d459f88-a14c-11f1-905b-b54eee52ffc8",
+      "title": "слесарь-сантехник",
+      "url": "https://trudvsem.ru/vacancy/card/a5f35810-5fc1-11ef-bb43-e7d0d2cf29b1/2d459f88-a14c-11f1-905b-b54eee52ffc8"
+    },
+    {
+      "id": "b1eaf6f8-7469-11f1-9358-e9926ce46e4e",
+      "title": "Инспектор",
+      "url": "https://trudvsem.ru/vacancy/card/1055525021243/b1eaf6f8-7469-11f1-9358-e9926ce46e4e"
+    },
+    {
+      "id": "f03c96fc-b72d-11f1-b9fd-bbcf99b669df",
+      "title": "Водитель автомобиля",
+      "url": "https://trudvsem.ru/vacancy/card/1124632011360/f03c96fc-b72d-11f1-b9fd-bbcf99b669df"
+    },
+    {
+      "id": "cf60a068-b693-11f1-85fc-83a545b8b137",
+      "title": "Инженер по подсчёту запасов и геомоделированию",
+      "url": "https://trudvsem.ru/vacancy/card/1227700374582/cf60a068-b693-11f1-85fc-83a545b8b137"
+    },
+    {
+      "id": "2b779a58-746a-11f1-9358-e9926ce46e4e",
+      "title": "Инспектор",
+      "url": "https://trudvsem.ru/vacancy/card/1055525021243/2b779a58-746a-11f1-9358-e9926ce46e4e"
+    },
+    {
+      "id": "f18ca688-a148-11f1-be6c-191a6b2a1e33",
+      "title": "электромонтер по обслуживанию электроустановок",
+      "url": "https://trudvsem.ru/vacancy/card/a5f35810-5fc1-11ef-bb43-e7d0d2cf29b1/f18ca688-a148-11f1-be6c-191a6b2a1e33"
+    },
+    {
+      "id": "8048a638-7534-11f1-ba13-0df010550bdb",
+      "title": "Инженер производственной и измерительной техники лаборатории",
+      "url": "https://trudvsem.ru/vacancy/card/1023302954025/8048a638-7534-11f1-ba13-0df010550bdb"
+    },
+    {
+      "id": "da467128-e0d9-11f0-8d1f-2532aae3901e",
+      "title": "Водитель автомобиля",
+      "url": "https://trudvsem.ru/vacancy/card/a5f35810-5fc1-11ef-bb43-e7d0d2cf29b1/da467128-e0d9-11f0-8d1f-2532aae3901e"
+    },
+    {
+      "id": "c9b08118-b73a-11f1-b291-e7968767fb9b",
+      "title": "Торговый представитель",
+      "url": "https://trudvsem.ru/vacancy/card/1132204001467/c9b08118-b73a-11f1-b291-e7968767fb9b"
+    },
+    {
+      "id": "3a403419-b732-11f1-85fc-83a545b8b137",
+      "title": "Начальник отделения",
+      "url": "https://trudvsem.ru/vacancy/card/6504f510-632b-11ec-83c4-4febb26dc4ec/3a403419-b732-11f1-85fc-83a545b8b137"
+    },
+    {
+      "id": "2af24190-e0d9-11f0-8d1f-2532aae3901e",
+      "title": "уборщик производственных и служебных помещений",
+      "url": "https://trudvsem.ru/vacancy/card/a5f35810-5fc1-11ef-bb43-e7d0d2cf29b1/2af24190-e0d9-11f0-8d1f-2532aae3901e"
+    },
+    {
+      "id": "8a19df48-6944-11f1-b82f-4dee768de3ba",
+      "title": "Начальник Москаленского отдела",
+      "url": "https://trudvsem.ru/vacancy/card/1055525021243/8a19df48-6944-11f1-b82f-4dee768de3ba"
+    },
+    {
+      "id": "2dbd22e9-12d5-11f1-b33d-0764f895192c",
+      "title": "Инженер по лесовосстановлению",
+      "url": "https://trudvsem.ru/vacancy/card/1164027066499/2dbd22e9-12d5-11f1-b33d-0764f895192c"
+    },
+    {
+      "id": "60e1d58c-57dc-11f0-898e-cb26dff57dd7",
+      "title": "Водитель автомобиля грузового/специального",
+      "url": "https://trudvsem.ru/vacancy/card/1164027066499/60e1d58c-57dc-11f0-898e-cb26dff57dd7"
+    },
+    {
+      "id": "d198b898-e0d8-11f0-8a3f-43eae7fdfc59",
+      "title": "Лифтер",
+      "url": "https://trudvsem.ru/vacancy/card/a5f35810-5fc1-11ef-bb43-e7d0d2cf29b1/d198b898-e0d8-11f0-8a3f-43eae7fdfc59"
+    },
+    {
+      "id": "966da2e5-7461-11ec-b224-57fc951f3846",
+      "title": "Слесарь-ремонтник",
+      "url": "https://trudvsem.ru/vacancy/card/1164027066499/966da2e5-7461-11ec-b224-57fc951f3846"
+    },
+    {
+      "id": "cf8e6d48-b73a-11f1-adb0-c78f30a32c76",
+      "title": "Гардеробщик",
+      "url": "https://trudvsem.ru/vacancy/card/1037400775631/cf8e6d48-b73a-11f1-adb0-c78f30a32c76"
+    },
+    {
+      "id": "e3ea2355-7f4b-11ec-82da-4febb26dc4ec",
+      "title": "Станочник деревообрабатывающих станков",
+      "url": "https://trudvsem.ru/vacancy/card/1164027066499/e3ea2355-7f4b-11ec-82da-4febb26dc4ec"
+    },
+    {
+      "id": "6cee7518-8bbe-11f1-9699-4f4591bc4f3e",
+      "title": "Водитель погрузчика",
+      "url": "https://trudvsem.ru/vacancy/card/1164027066499/6cee7518-8bbe-11f1-9699-4f4591bc4f3e"
+    },
+    {
+      "id": "50f00cd8-897a-11f0-b5da-bdc82d0d5dcd",
+      "title": "Аппаратчик приготовления эмульсии",
+      "url": "https://trudvsem.ru/vacancy/card/1025900895712/50f00cd8-897a-11f0-b5da-bdc82d0d5dcd"
+    },
+    {
+      "id": "cc6de198-b5b4-11f1-80a9-795f97aab242",
+      "title": "Менеджер по персоналу",
+      "url": "https://trudvsem.ru/vacancy/card/1111690025512/cc6de198-b5b4-11f1-80a9-795f97aab242"
+    },
+    {
+      "id": "f31327d8-b733-11f1-85fc-83a545b8b137",
+      "title": "Начальник отделения",
+      "url": "https://trudvsem.ru/vacancy/card/6504f510-632b-11ec-83c4-4febb26dc4ec/f31327d8-b733-11f1-85fc-83a545b8b137"
+    },
+    {
+      "id": "99d44cb8-6a19-11f1-a438-437bd200794c",
+      "title": "Младшая медицинская сестра по уходу за больными",
+      "url": "https://trudvsem.ru/vacancy/card/1022601995833/99d44cb8-6a19-11f1-a438-437bd200794c"
+    },
+    {
+      "id": "3b557f40-12dc-11f1-b47e-71985f204ab9",
+      "title": "Токарь-расточник",
+      "url": "https://trudvsem.ru/vacancy/card/1164027066499/3b557f40-12dc-11f1-b47e-71985f204ab9"
+    },
+    {
+      "id": "e7c1c238-d5b4-11f0-8987-1f09eae535df",
+      "title": "Машинист крана",
+      "url": "https://trudvsem.ru/vacancy/card/1164027066499/e7c1c238-d5b4-11f0-8987-1f09eae535df"
+    },
+    {
+      "id": "4aba0929-c9f2-11f0-bb35-65c40553d4d9",
+      "title": "Инженер по вентиляции",
+      "url": "https://trudvsem.ru/vacancy/card/1164027066499/4aba0929-c9f2-11f0-bb35-65c40553d4d9"
+    },
+    {
+      "id": "c1b5adf8-96f1-11f1-91b0-1f91741cd2d5",
+      "title": "Мастер зеленого хозяйства",
+      "url": "https://trudvsem.ru/vacancy/card/1022303554635/c1b5adf8-96f1-11f1-91b0-1f91741cd2d5"
+    },
+    {
+      "id": "b6f5ddd8-b727-11f1-b9fd-bbcf99b669df",
+      "title": "Главный энергетик горного предприятия",
+      "url": "https://trudvsem.ru/vacancy/card/1227700374582/b6f5ddd8-b727-11f1-b9fd-bbcf99b669df"
+    },
+    {
+      "id": "ad9dfe69-b72d-11f1-80a9-795f97aab242",
+      "title": "Кухонный рабочий",
+      "url": "https://trudvsem.ru/vacancy/card/1026801155776/ad9dfe69-b72d-11f1-80a9-795f97aab242"
+    },
+    {
+      "id": "1d2e4538-b695-11f1-80a9-795f97aab242",
+      "title": "Инженер по опробованию и контролю качества руды",
+      "url": "https://trudvsem.ru/vacancy/card/1227700374582/1d2e4538-b695-11f1-80a9-795f97aab242"
+    },
+    {
+      "id": "a3956cd8-b694-11f1-85fc-83a545b8b137",
+      "title": "Инженер по материаловедению и коррозии",
+      "url": "https://trudvsem.ru/vacancy/card/1227700374582/a3956cd8-b694-11f1-85fc-83a545b8b137"
+    },
+    {
+      "id": "a141dd78-b724-11f1-85fc-83a545b8b137",
+      "title": "Инженер по гидрометаллургии",
+      "url": "https://trudvsem.ru/vacancy/card/1227700374582/a141dd78-b724-11f1-85fc-83a545b8b137"
+    },
+    {
+      "id": "70889c60-96ee-11f1-91b0-1f91741cd2d5",
+      "title": "Подсобный рабочий",
+      "url": "https://trudvsem.ru/vacancy/card/1022303554635/70889c60-96ee-11f1-91b0-1f91741cd2d5"
+    },
+    {
+      "id": "97d53a58-b726-11f1-85fc-83a545b8b137",
+      "title": "Инженер по наладке и испытаниям горно-обогатительного оборудования",
+      "url": "https://trudvsem.ru/vacancy/card/1227700374582/97d53a58-b726-11f1-85fc-83a545b8b137"
+    },
+    {
+      "id": "fe851938-b723-11f1-80a9-795f97aab242",
+      "title": "Инженер по флотации и реагентному режиму",
+      "url": "https://trudvsem.ru/vacancy/card/1227700374582/fe851938-b723-11f1-80a9-795f97aab242"
+    },
+    {
+      "id": "2b512298-b681-11f1-80a9-795f97aab242",
+      "title": "Руководитель проекта (управление проектом)",
+      "url": "https://trudvsem.ru/vacancy/card/1227700374582/2b512298-b681-11f1-80a9-795f97aab242"
+    },
+    {
+      "id": "2925cc38-b683-11f1-85fc-83a545b8b137",
+      "title": "Инженер строительного контроля",
+      "url": "https://trudvsem.ru/vacancy/card/1227700374582/2925cc38-b683-11f1-85fc-83a545b8b137"
+    },
+    {
+      "id": "03b1ac78-b684-11f1-85fc-83a545b8b137",
+      "title": "Инженер по планированию и контролю проекта",
+      "url": "https://trudvsem.ru/vacancy/card/1227700374582/03b1ac78-b684-11f1-85fc-83a545b8b137"
+    },
+    {
+      "id": "57017b28-b680-11f1-80a9-795f97aab242",
+      "title": "Инженер по системам отопления, вентиляции и кондиционирования",
+      "url": "https://trudvsem.ru/vacancy/card/1227700374582/57017b28-b680-11f1-80a9-795f97aab242"
+    },
+    {
+      "id": "3dd93238-b696-11f1-80a9-795f97aab242",
+      "title": "Инженер-технолог обогащения",
+      "url": "https://trudvsem.ru/vacancy/card/1227700374582/3dd93238-b696-11f1-80a9-795f97aab242"
+    },
+    {
+      "id": "630c9a18-b682-11f1-80a9-795f97aab242",
+      "title": "Супервайзер по пусконаладке систем управления",
+      "url": "https://trudvsem.ru/vacancy/card/1227700374582/630c9a18-b682-11f1-80a9-795f97aab242"
+    },
+    {
+      "id": "93569a55-8ef9-11ec-aae7-550ed7335bbe",
+      "title": "Контролер деревообрабатывающего производства",
+      "url": "https://trudvsem.ru/vacancy/card/1164027066499/93569a55-8ef9-11ec-aae7-550ed7335bbe"
+    },
+    {
+      "id": "cd403698-b681-11f1-85fc-83a545b8b137",
+      "title": "Инженер-технолог по пусконаладке",
+      "url": "https://trudvsem.ru/vacancy/card/1227700374582/cd403698-b681-11f1-85fc-83a545b8b137"
+    },
+    {
+      "id": "ae4279d8-b67f-11f1-b9fd-bbcf99b669df",
+      "title": "Инженер по пусконаладке механического и ротационного оборудования",
+      "url": "https://trudvsem.ru/vacancy/card/1227700374582/ae4279d8-b67f-11f1-b9fd-bbcf99b669df"
+    },
+    {
+      "id": "5598f508-b681-11f1-85fc-83a545b8b137",
+      "title": "Инженер-строитель (гражданские сооружения и фундаменты)",
+      "url": "https://trudvsem.ru/vacancy/card/1227700374582/5598f508-b681-11f1-85fc-83a545b8b137"
+    },
+    {
+      "id": "a7c8cd68-b680-11f1-80a9-795f97aab242",
+      "title": "Инженер по пусконаладке электрооборудования",
+      "url": "https://trudvsem.ru/vacancy/card/1227700374582/a7c8cd68-b680-11f1-80a9-795f97aab242"
+    },
+    {
+      "id": "9b26dac8-b680-11f1-80a9-795f97aab242",
+      "title": "Инженер по турбокомпрессорному и вращающемуся оборудованию",
+      "url": "https://trudvsem.ru/vacancy/card/1227700374582/9b26dac8-b680-11f1-80a9-795f97aab242"
+    },
+    {
+      "id": "92e5dbd8-b681-11f1-80a9-795f97aab242",
+      "title": "Инженер по пусконаладке контрольно-измерительных приборов и автоматики",
+      "url": "https://trudvsem.ru/vacancy/card/1227700374582/92e5dbd8-b681-11f1-80a9-795f97aab242"
+    },
+    {
+      "id": "b5547938-b67f-11f1-85fc-83a545b8b137",
+      "title": "Инженер по статическому оборудованию (техническая целостность)",
+      "url": "https://trudvsem.ru/vacancy/card/1227700374582/b5547938-b67f-11f1-85fc-83a545b8b137"
+    },
+    {
+      "id": "51773498-b67d-11f1-b9fd-bbcf99b669df",
+      "title": "Инженер-технолог по пусконаладке",
+      "url": "https://trudvsem.ru/vacancy/card/1227700374582/51773498-b67d-11f1-b9fd-bbcf99b669df"
+    },
+    {
+      "id": "4d2287d8-b67a-11f1-85fc-83a545b8b137",
+      "title": "Инженер по пусконаладке технологического оборудования",
+      "url": "https://trudvsem.ru/vacancy/card/1227700374582/4d2287d8-b67a-11f1-85fc-83a545b8b137"
+    },
+    {
+      "id": "3c622b28-96f0-11f1-bf91-e781a974275b",
+      "title": "Рабочий зелёного строительства",
+      "url": "https://trudvsem.ru/vacancy/card/1022303554635/3c622b28-96f0-11f1-bf91-e781a974275b"
+    },
+    {
+      "id": "886723dc-4200-11f1-9ac5-21d70050d784",
+      "title": "Водитель погрузчика",
+      "url": "https://trudvsem.ru/vacancy/card/1164027066499/886723dc-4200-11f1-9ac5-21d70050d784"
+    },
+    {
+      "id": "85ca2cb8-b67e-11f1-85fc-83a545b8b137",
+      "title": "Шеф-инженер по пусконаладке компрессорного и паротурбинного оборудования",
+      "url": "https://trudvsem.ru/vacancy/card/1227700374582/85ca2cb8-b67e-11f1-85fc-83a545b8b137"
+    },
+    {
+      "id": "92635048-b67f-11f1-80a9-795f97aab242",
+      "title": "Менеджер по обеспечению и контролю качества",
+      "url": "https://trudvsem.ru/vacancy/card/1227700374582/92635048-b67f-11f1-80a9-795f97aab242"
+    },
+    {
+      "id": "c61c8f88-b677-11f1-80a9-795f97aab242",
+      "title": "Руководитель пусконаладки технологической установки",
+      "url": "https://trudvsem.ru/vacancy/card/1227700374582/c61c8f88-b677-11f1-80a9-795f97aab242"
+    },
+    {
+      "id": "9e545fe8-b673-11f1-b9fd-bbcf99b669df",
+      "title": "Ведущий инженер-проектировщик",
+      "url": "https://trudvsem.ru/vacancy/card/1227700374582/9e545fe8-b673-11f1-b9fd-bbcf99b669df"
+    },
+    {
+      "id": "cda912e8-b673-11f1-85fc-83a545b8b137",
+      "title": "Бизнес аналитик",
+      "url": "https://trudvsem.ru/vacancy/card/1227700374582/cda912e8-b673-11f1-85fc-83a545b8b137"
+    },
+    {
+      "id": "fe804738-b673-11f1-80a9-795f97aab242",
+      "title": "Координатор переходящих строительных работ",
+      "url": "https://trudvsem.ru/vacancy/card/1227700374582/fe804738-b673-11f1-80a9-795f97aab242"
+    },
+    {
+      "id": "2d39b688-b672-11f1-80a9-795f97aab242",
+      "title": "Специалист по охране труда и пожарной безопасности",
+      "url": "https://trudvsem.ru/vacancy/card/1227700374582/2d39b688-b672-11f1-80a9-795f97aab242"
+    },
+    {
+      "id": "300d7fa8-b725-11f1-80a9-795f97aab242",
+      "title": "Инженер по хвостовому хозяйству и ГТС",
+      "url": "https://trudvsem.ru/vacancy/card/1227700374582/300d7fa8-b725-11f1-80a9-795f97aab242"
+    },
+    {
+      "id": "b4eed678-8754-11f1-bb45-4b2af1e5c9cb",
+      "title": "Обработчик рыбы и морепродуктов",
+      "url": "https://trudvsem.ru/vacancy/card/1183328015705/b4eed678-8754-11f1-bb45-4b2af1e5c9cb"
+    },
+    {
+      "id": "c7646088-b671-11f1-85fc-83a545b8b137",
+      "title": "Инженер в строительной сфере",
+      "url": "https://trudvsem.ru/vacancy/card/1227700374582/c7646088-b671-11f1-85fc-83a545b8b137"
+    },
+    {
+      "id": "89cc40d8-b72a-11f1-b9fd-bbcf99b669df",
+      "title": "Инженер автоматизированной системы управления технологическим процессом на обогатительной фабрики",
+      "url": "https://trudvsem.ru/vacancy/card/1227700374582/89cc40d8-b72a-11f1-b9fd-bbcf99b669df"
+    },
+    {
+      "id": "de6f2d50-cf40-11f0-a436-7db1619400bf",
+      "title": "Оператор производственной линии",
+      "url": "https://trudvsem.ru/vacancy/card/1164027066499/de6f2d50-cf40-11f0-a436-7db1619400bf"
+    },
+    {
+      "id": "edb8f648-9ac6-11f1-a6b4-b9457f95c409",
+      "title": "Оператор (помощник пекаря)",
+      "url": "https://trudvsem.ru/vacancy/card/1171832030798/edb8f648-9ac6-11f1-a6b4-b9457f95c409"
+    },
+    {
+      "id": "093564b0-9709-11f1-882e-0dd886e483c8",
+      "title": "Агроном",
+      "url": "https://trudvsem.ru/vacancy/card/1022303554635/093564b0-9709-11f1-882e-0dd886e483c8"
+    },
+    {
+      "id": "b2d51264-b724-11f1-80a9-795f97aab242",
+      "title": "педагог-психолог",
+      "url": "https://trudvsem.ru/vacancy/card/1022304875526/b2d51264-b724-11f1-80a9-795f97aab242"
+    },
+    {
+      "id": "c1fd2448-d4bf-11f0-b730-d758e7e1c196",
+      "title": "Грузчик",
+      "url": "https://trudvsem.ru/vacancy/card/1164027066499/c1fd2448-d4bf-11f0-b730-d758e7e1c196"
+    },
+    {
+      "id": "d5cc61a8-8754-11f1-9699-4f4591bc4f3e",
+      "title": "Инженер по автоматизированным системам управления производством",
+      "url": "https://trudvsem.ru/vacancy/card/1183328015705/d5cc61a8-8754-11f1-9699-4f4591bc4f3e"
+    },
+    {
+      "id": "2bcd2ba8-a502-11f1-8f65-7f3d797fed49",
+      "title": "Грузчик",
+      "url": "https://trudvsem.ru/vacancy/card/1164027066499/2bcd2ba8-a502-11f1-8f65-7f3d797fed49"
+    },
+    {
+      "id": "f65e5cc8-f1d6-11f0-ba7d-9959eb3311ba",
+      "title": "Охранник 4 разряда",
+      "url": "https://trudvsem.ru/vacancy/card/1137232056785/f65e5cc8-f1d6-11f0-ba7d-9959eb3311ba"
+    },
+    {
+      "id": "50c7c6f8-d4be-11f0-b730-d758e7e1c196",
+      "title": "Электромонтер",
+      "url": "https://trudvsem.ru/vacancy/card/1164027066499/50c7c6f8-d4be-11f0-b730-d758e7e1c196"
+    },
+    {
+      "id": "92ab0e58-585e-11f1-aec1-4103e3ed6448",
+      "title": "Водитель погрузчика",
+      "url": "https://trudvsem.ru/vacancy/card/1164027066499/92ab0e58-585e-11f1-aec1-4103e3ed6448"
+    },
+    {
+      "id": "6ef63188-3d7d-11f0-989b-d549be31d974",
+      "title": "Слесарь",
+      "url": "https://trudvsem.ru/vacancy/card/1022303554635/6ef63188-3d7d-11f0-989b-d549be31d974"
+    }
+  ]
+}

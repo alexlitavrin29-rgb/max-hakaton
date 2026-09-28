@@ -1,0 +1,17 @@
+{
+  "interval_seconds": 10,
+  "samples": 260,
+  "sample_errors": 0,
+  "miniapp_cpu_percent": {"p95": 74.33, "max": 109.92},
+  "miniapp_memory_mib": {"p95": 349.9, "max": 363.1},
+  "postgres_cpu_percent": {"p95": 38.36, "max": 46.07},
+  "postgres_memory_mib": {"p95": 69.14, "max": 69.36},
+  "queue": {
+    "max_active": 4,
+    "max_waiting_observed": 0,
+    "wait_p50_ms_max": 0.066,
+    "wait_p95_ms_max": 0.110,
+    "wait_p99_ms_max": 1.015
+  },
+  "note": "Ten-second sampling can miss short queue peaks. Queue wait percentiles are the highest cumulative values reported during the run."
+}

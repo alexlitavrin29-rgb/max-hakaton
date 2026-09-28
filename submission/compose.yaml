@@ -1,0 +1,59 @@
+name: tochka-submission
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: support_router
+      POSTGRES_USER: support_router
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in submission/.env}
+    volumes: [submission_db:/var/lib/postgresql/data]
+    healthcheck:
+      test: [CMD-SHELL, pg_isready -U support_router -d support_router]
+      interval: 2s
+      timeout: 3s
+      retries: 30
+  seed:
+    image: tochka-submission:2026-09-28
+    build:
+      context: ..
+      dockerfile: submission/Dockerfile
+    env_file: .env
+    environment: &environment
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: '5432'
+      POSTGRES_USER: support_router
+      POSTGRES_DB: support_router
+      HELP_CITY_FIRST: '1'
+      HELP_API_URL: http://miniapp:8766/api/help
+    command: [python, -m, tools.submission.seed]
+    depends_on:
+      postgres: {condition: service_healthy}
+  miniapp:
+    image: tochka-submission:2026-09-28
+    env_file: .env
+    environment:
+      <<: *environment
+      MINIAPP_PREVIEW: '1'
+      HELP_API_URL: http://127.0.0.1:8766/api/help
+      REEF_CACHE_PATH: /app/project/cache/reefapi.json
+      TRUDVSEM_CACHE_PATH: /app/project/cache/trudvsem.json
+    ports: ['127.0.0.1:18866:8766']
+    depends_on:
+      seed: {condition: service_completed_successfully}
+    healthcheck:
+      test: [CMD, python, -c, "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8766/api/health')"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+  bot:
+    profiles: [bot]
+    image: tochka-submission:2026-09-28
+    env_file: .env
+    environment:
+      <<: *environment
+      HELP_API_URL: ''
+    command: [python, -m, project.llm.bot]
+    depends_on:
+      miniapp: {condition: service_healthy}
+volumes:
+  submission_db:

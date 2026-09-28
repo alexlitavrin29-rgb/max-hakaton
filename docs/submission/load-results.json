@@ -1,0 +1,170 @@
+{
+  "duration_seconds": {
+    "steady": 1800,
+    "spike": 600
+  },
+  "concurrency_limits": {
+    "health": 4,
+    "help": 4,
+    "read": 4,
+    "write": 2,
+    "action": 4
+  },
+  "groups": {
+    "spike/action": {
+      "requests": 480,
+      "status": {
+        "200": 480
+      },
+      "error_fraction": 0.0,
+      "timeouts": 0,
+      "p50_ms": 579.4,
+      "p95_ms": 682.83,
+      "p99_ms": 729.09
+    },
+    "spike/health": {
+      "requests": 2400,
+      "status": {
+        "200": 2400
+      },
+      "error_fraction": 0.0,
+      "timeouts": 0,
+      "p50_ms": 15.34,
+      "p95_ms": 187.87,
+      "p99_ms": 344.64
+    },
+    "spike/help": {
+      "requests": 1200,
+      "status": {
+        "200": 1199,
+        "transport_error": 1
+      },
+      "error_fraction": 0.00083,
+      "timeouts": 0,
+      "p50_ms": 52.17,
+      "p95_ms": 151.96,
+      "p99_ms": 254.99
+    },
+    "spike/read": {
+      "requests": 2400,
+      "status": {
+        "200": 2400
+      },
+      "error_fraction": 0.0,
+      "timeouts": 0,
+      "p50_ms": 271.28,
+      "p95_ms": 667.51,
+      "p99_ms": 724.26
+    },
+    "spike/write": {
+      "requests": 480,
+      "status": {
+        "200": 447,
+        "429": 33
+      },
+      "error_fraction": 0.06875,
+      "timeouts": 0,
+      "p50_ms": 432.4,
+      "p95_ms": 786.93,
+      "p99_ms": 836.15
+    },
+    "steady/action": {
+      "requests": 240,
+      "status": {
+        "200": 240
+      },
+      "error_fraction": 0.0,
+      "timeouts": 0,
+      "p50_ms": 539.46,
+      "p95_ms": 647.92,
+      "p99_ms": 659.9
+    },
+    "steady/health": {
+      "requests": 1800,
+      "status": {
+        "200": 1800
+      },
+      "error_fraction": 0.0,
+      "timeouts": 0,
+      "p50_ms": 3.55,
+      "p95_ms": 41.45,
+      "p99_ms": 56.58
+    },
+    "steady/help": {
+      "requests": 360,
+      "status": {
+        "200": 360
+      },
+      "error_fraction": 0.0,
+      "timeouts": 0,
+      "p50_ms": 58.66,
+      "p95_ms": 124.36,
+      "p99_ms": 262.36
+    },
+    "steady/read": {
+      "requests": 1440,
+      "status": {
+        "200": 1440
+      },
+      "error_fraction": 0.0,
+      "timeouts": 0,
+      "p50_ms": 256.39,
+      "p95_ms": 615.81,
+      "p99_ms": 674.08
+    },
+    "steady/write": {
+      "requests": 240,
+      "status": {
+        "429": 20,
+        "200": 220
+      },
+      "error_fraction": 0.08333,
+      "timeouts": 0,
+      "p50_ms": 429.4,
+      "p95_ms": 747.72,
+      "p99_ms": 784.86
+    }
+  },
+  "provider_probes": [
+    {
+      "source": "hh",
+      "calls": 1,
+      "outcome": "TrudvsemError",
+      "duration_ms": 3769.0
+    },
+    {
+      "source": "trudvsem",
+      "calls": 1,
+      "outcome": "ok",
+      "duration_ms": 8929.62
+    },
+    {
+      "source": "reefapi",
+      "calls": 1,
+      "outcome": "ok",
+      "duration_ms": 1334.33
+    },
+    {
+      "source": "hh",
+      "calls": 1,
+      "outcome": "TrudvsemError",
+      "duration_ms": 3488.26
+    },
+    {
+      "source": "trudvsem",
+      "calls": 1,
+      "outcome": "ok",
+      "duration_ms": 13781.95
+    },
+    {
+      "source": "reefapi",
+      "calls": 1,
+      "outcome": "ok",
+      "duration_ms": 1387.13
+    }
+  ],
+  "pg_connections": {
+    "max": 10,
+    "samples": 240
+  }
+}

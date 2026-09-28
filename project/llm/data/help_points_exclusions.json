@@ -1,0 +1,158 @@
+[
+  {
+    "match": {
+      "region": "Волгоградская область",
+      "city": "Волгоград",
+      "organization_name": "Благотворительный фонд «Добродомик»",
+      "branch_name": "Благотворительное кафе «Добродомик» — Волгоград",
+      "target_group": "пожилые люди"
+    },
+    "decision": "exclude_elderly_only",
+    "reason": "Программа питания для пожилых; не соответствует молодой аудитории.",
+    "source_url": "https://xn--90afbqkklbbr.xn--p1ai/",
+    "reviewed_at": "2026-09-27"
+  },
+  {
+    "match": {
+      "region": "Воронежская область",
+      "city": "Воронеж",
+      "organization_name": "Благотворительный фонд «Чистое сердце»",
+      "branch_name": "Благотворительная столовая «Точка помощи»",
+      "target_group": "Одинокие пожилые люди и люди с инвалидностью, нуждающиеся в помощи."
+    },
+    "decision": "hold_for_review",
+    "reason": "Смешаны программы или организации; доступность именно этой услуги молодой аудитории не подтверждена. Нужна отдельная проверка.",
+    "source_url": "https://fondserdce.ru/campaign/pomoshh-pozhilym-lyudyam/",
+    "reviewed_at": "2026-09-27"
+  },
+  {
+    "match": {
+      "region": "Иркутская область",
+      "city": "Ангарск",
+      "organization_name": "Благотворительный фонд «Добродомик»",
+      "branch_name": "Благотворительное кафе «Добродомик» — Ангарск",
+      "target_group": "пожилые люди"
+    },
+    "decision": "exclude_elderly_only",
+    "reason": "Программа питания для пожилых; не соответствует молодой аудитории.",
+    "source_url": "https://xn--90afbqkklbbr.xn--p1ai/",
+    "reviewed_at": "2026-09-27"
+  },
+  {
+    "match": {
+      "region": "Иркутская область",
+      "city": "Иркутск",
+      "organization_name": "Благотворительный фонд «Добродомик»",
+      "branch_name": "Благотворительное кафе «Добродомик» — Иркутск",
+      "target_group": "пожилые люди"
+    },
+    "decision": "exclude_elderly_only",
+    "reason": "Программа питания для пожилых; не соответствует молодой аудитории.",
+    "source_url": "https://xn--90afbqkklbbr.xn--p1ai/",
+    "reviewed_at": "2026-09-27"
+  },
+  {
+    "match": {
+      "region": "Карачаево-Черкесская Республика",
+      "city": "Черкесск",
+      "organization_name": "АНО социальной поддержки населения «Очаг Добра» / БО «Самира»",
+      "branch_name": "Благотворительное кафе «Очаг Добра»",
+      "target_group": "Малоимущие пожилые люди и ветераны"
+    },
+    "decision": "hold_for_review",
+    "reason": "Смешаны программы или организации; доступность именно этой услуги молодой аудитории не подтверждена. Нужна отдельная проверка.",
+    "source_url": "https://palata09.ru/nko/spisok-nko/",
+    "reviewed_at": "2026-09-27"
+  },
+  {
+    "match": {
+      "region": "Новгородская область",
+      "city": "Великий Новгород",
+      "organization_name": "Благотворительный фонд «Добродомик»",
+      "branch_name": "Благотворительное кафе «Добродомик»",
+      "target_group": "Пожилые люди / пенсионеры"
+    },
+    "decision": "exclude_elderly_only",
+    "reason": "Программа питания для пожилых; не соответствует молодой аудитории.",
+    "source_url": "https://xn--90afbqkklbbr.xn--p1ai/branches/velikij-novgorod/",
+    "reviewed_at": "2026-09-27"
+  },
+  {
+    "match": {
+      "region": "Новосибирская область",
+      "city": "Маслянино",
+      "organization_name": "Благотворительный фонд «Добродомик»",
+      "branch_name": "Благотворительное кафе «Добродомик» — Маслянино",
+      "target_group": "пожилые люди"
+    },
+    "decision": "exclude_elderly_only",
+    "reason": "Программа питания для пожилых; не соответствует молодой аудитории.",
+    "source_url": "https://xn--90afbqkklbbr.xn--p1ai/",
+    "reviewed_at": "2026-09-27"
+  },
+  {
+    "match": {
+      "region": "Санкт-Петербург",
+      "city": "Санкт-Петербург",
+      "organization_name": "Благотворительный фонд «Добродомик»",
+      "branch_name": "Благотворительное кафе «Добродомик»",
+      "target_group": "Пожилые люди / пенсионеры"
+    },
+    "decision": "exclude_elderly_only",
+    "reason": "Программа питания для пожилых; не соответствует молодой аудитории.",
+    "source_url": "https://xn--90afbqkklbbr.xn--p1ai/branches/sankt-peterburg/",
+    "reviewed_at": "2026-09-27"
+  },
+  {
+    "match": {
+      "region": "Санкт-Петербург",
+      "city": "Санкт-Петербург",
+      "organization_name": "Благотворительный фонд «Добродомик»",
+      "branch_name": "Благотворительное кафе «Добродомик»",
+      "target_group": "Пожилые люди / пенсионеры"
+    },
+    "decision": "exclude_elderly_only",
+    "reason": "Программа питания для пожилых; не соответствует молодой аудитории.",
+    "source_url": "https://xn--90afbqkklbbr.xn--p1ai/branches/sankt-peterburg/",
+    "reviewed_at": "2026-09-27"
+  },
+  {
+    "match": {
+      "region": "Санкт-Петербург",
+      "city": "Санкт-Петербург",
+      "organization_name": "Благотворительный фонд «Добродомик»",
+      "branch_name": "Благотворительное кафе «Добродомик»",
+      "target_group": "Пожилые люди / пенсионеры"
+    },
+    "decision": "exclude_elderly_only",
+    "reason": "Программа питания для пожилых; не соответствует молодой аудитории.",
+    "source_url": "https://xn--90afbqkklbbr.xn--p1ai/branches/sankt-peterburg/",
+    "reviewed_at": "2026-09-27"
+  },
+  {
+    "match": {
+      "region": "Тульская область",
+      "city": "Тула",
+      "organization_name": "Благотворительный фонд «Добродомик»",
+      "branch_name": "Благотворительное кафе «Добродомик»",
+      "target_group": "Пенсионеры"
+    },
+    "decision": "exclude_elderly_only",
+    "reason": "Программа питания для пожилых; не соответствует молодой аудитории.",
+    "source_url": "https://xn--90afbqkklbbr.xn--p1ai/",
+    "reviewed_at": "2026-09-27"
+  },
+  {
+    "match": {
+      "region": "Челябинская область",
+      "city": "Челябинск",
+      "organization_name": "Благотворительный фонд «Добродомик»",
+      "branch_name": "Благотворительное кафе «Добродомик» — Челябинск",
+      "target_group": "пожилые люди"
+    },
+    "decision": "exclude_elderly_only",
+    "reason": "Программа питания для пожилых; не соответствует молодой аудитории.",
+    "source_url": "https://xn--90afbqkklbbr.xn--p1ai/",
+    "reviewed_at": "2026-09-27"
+  }
+]

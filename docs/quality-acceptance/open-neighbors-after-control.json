@@ -1,0 +1,779 @@
+{
+  "status": "OPEN_DEVELOPMENT_REGRESSIONS_NOT_ACCEPTANCE_NOT_99_PERCENT",
+  "purpose": "Новые соседние примеры для проверки последующих рабочих исправлений. Не заменяют закрытый контроль и не дают оценки 99%.",
+  "provenance": {
+    "implementation_read": false,
+    "live_outputs_read": false,
+    "paid_calls": 0,
+    "sealed_inputs_used_for_composition": false,
+    "sealed_read_scope_for_this_task": "Только программное сравнение полных реплик и native fixtures после независимого составления; закрытые строки не выводились.",
+    "root_content_visibility": "Не открывать содержимое до завершения capture и начальных исправлений по repair packet."
+  },
+  "comparison_audit": {
+    "normalized_complete_utterance_matches": 0,
+    "exact_native_fixture_matches": 0,
+    "normalization": "casefold and collapse whitespace; full-string equality only",
+    "scope_limit": "Это проверка отсутствия дословного копирования, а не доказательство статистической или смысловой независимости.",
+    "verbatim_sentence_matches_at_least_25_chars": 0,
+    "verbatim_native_text_value_matches_at_least_25_chars": 0
+  },
+  "cases": [
+    {
+      "id": "ON01",
+      "branch": "work",
+      "role": "child",
+      "category": "native_text_conflict",
+      "purpose": "Структурный график не перекрывает прямой отказ в описании.",
+      "initial_context": "Новая сессия, соответствующая поисковая ветка; профиль пустой. Источники только локальные фикстуры.",
+      "turns": [
+        {
+          "user": "Мне двадцать лет, рассматриваю должность переплётчика в Челябинске. Работать смогу исключительно удалённо.",
+          "expected": {
+            "meaning": "search",
+            "source_allowed": true,
+            "saved_conditions": {
+              "place": "Челябинск",
+              "age": 20,
+              "profession": "переплётчик",
+              "schedule": "remote"
+            },
+            "active_unverified_wishes": [],
+            "mandatory_caveats": []
+          }
+        }
+      ],
+      "cards": [
+        {
+          "id": "ON01A",
+          "source_fields": {
+            "id": "ON01A",
+            "job-name": "Переплётчик учебных изданий",
+            "vac_url": "https://fixtures.invalid/open-neighbor/ON01A",
+            "company": {
+              "name": "Учебный работодатель",
+              "companycode": "7000000000"
+            },
+            "city": "Челябинск",
+            "schedule": "Удалённая работа",
+            "requirements": "Выполнение задач возможно исключительно в цехе. Дистанционного режима нет."
+          },
+          "expected_status": "excluded",
+          "reason": "Прямое отрицание удалённой работы противоречит условию, несмотря на значение schedule."
+        }
+      ],
+      "evaluation": "Проверять смысл и сохранение условий, а не дословный ответ. Ошибка на любом ходе проваливает данный открытый пример."
+    },
+    {
+      "id": "ON02",
+      "branch": "work",
+      "role": "child",
+      "category": "native_text_conflict",
+      "purpose": "Сведения о предоставлении жилья конфликтуют внутри вакансии.",
+      "initial_context": "Новая сессия, соответствующая поисковая ветка; профиль пустой. Источники только локальные фикстуры.",
+      "turns": [
+        {
+          "user": "Челябинск, работа резчиком бумаги. Мне 23. Согласен только на варианты, где работодатель поселит меня за свой счёт.",
+          "expected": {
+            "meaning": "request_consent",
+            "source_allowed": false,
+            "saved_conditions": {
+              "place": "Челябинск",
+              "age": 23,
+              "profession": "резчик бумаги",
+              "accommodation": true
+            },
+            "active_unverified_wishes": [
+              "предоставляемое жильё оплачивает работодатель"
+            ],
+            "mandatory_caveats": []
+          }
+        },
+        {
+          "user": "Проверку оплаты проживания снимаю. Само жильё от работодателя всё равно обязательно.",
+          "expected": {
+            "meaning": "search",
+            "source_allowed": true,
+            "saved_conditions": {
+              "place": "Челябинск",
+              "age": 23,
+              "profession": "резчик бумаги",
+              "accommodation": true
+            },
+            "active_unverified_wishes": [],
+            "mandatory_caveats": []
+          }
+        }
+      ],
+      "cards": [
+        {
+          "id": "ON02A",
+          "source_fields": {
+            "id": "ON02A",
+            "job-name": "Резчик бумаги на производстве",
+            "vac_url": "https://fixtures.invalid/open-neighbor/ON02A",
+            "company": {
+              "name": "Учебный работодатель",
+              "companycode": "7000000000"
+            },
+            "city": "Челябинск",
+            "accommodation": true,
+            "requirements": "Предприятие не располагает общежитием и не предоставляет сотрудникам жильё."
+          },
+          "expected_status": "excluded",
+          "reason": "Явное отсутствие жилья не позволяет считать accommodation=true достаточным."
+        }
+      ],
+      "evaluation": "Проверять смысл и сохранение условий, а не дословный ответ. Ошибка на любом ходе проваливает данный открытый пример."
+    },
+    {
+      "id": "ON03",
+      "branch": "housing",
+      "role": "child",
+      "category": "native_text_conflict",
+      "purpose": "Тип объекта в заголовке противоречит категории источника.",
+      "initial_context": "Новая сессия, соответствующая поисковая ветка; профиль пустой. Источники только локальные фикстуры.",
+      "turns": [
+        {
+          "user": "Подберите в Архангельске целую квартиру на длительный срок, максимум 27 000 рублей за месяц аренды.",
+          "expected": {
+            "meaning": "search",
+            "source_allowed": true,
+            "saved_conditions": {
+              "place": "Архангельск",
+              "budget_month_rub": 27000,
+              "transaction": "rent_long",
+              "property_type": "apartment"
+            },
+            "active_unverified_wishes": [],
+            "mandatory_caveats": []
+          }
+        }
+      ],
+      "cards": [
+        {
+          "id": "ON03A",
+          "source_fields": {
+            "ad_id": "ON03A",
+            "title": "Сдаётся только комната внутри квартиры; санузел и кухня общие",
+            "url": "https://www.avito.ru/fixture_only/open_neighbor_ON03A",
+            "price": 27000,
+            "currency": "RUB",
+            "price_period": "в месяц",
+            "location": {
+              "name": "Архангельск",
+              "location_id": 970001
+            },
+            "realty_type": {
+              "transaction_type": "ltr",
+              "rent_term": "long_term"
+            },
+            "category": {
+              "slug": "kvartiry"
+            }
+          },
+          "expected_status": "excluded",
+          "reason": "category=kvartiry не отменяет прямое указание, что сдаётся лишь комната."
+        }
+      ],
+      "evaluation": "Проверять смысл и сохранение условий, а не дословный ответ. Ошибка на любом ходе проваливает данный открытый пример."
+    },
+    {
+      "id": "ON04",
+      "branch": "housing",
+      "role": "child",
+      "category": "negated_unsupported_intent",
+      "purpose": "Отрицание покупки не должно переключать запрос на покупку.",
+      "initial_context": "Новая сессия, соответствующая поисковая ветка; профиль пустой. Источники только локальные фикстуры.",
+      "turns": [
+        {
+          "user": "Квартиру покупать не планирую: нужна именно аренда на год в Белгороде. На арендную плату — не более 31 000 рублей ежемесячно.",
+          "expected": {
+            "meaning": "search",
+            "source_allowed": true,
+            "saved_conditions": {
+              "place": "Белгород",
+              "budget_month_rub": 31000,
+              "transaction": "rent_long",
+              "property_type": "apartment"
+            },
+            "active_unverified_wishes": [],
+            "mandatory_caveats": []
+          }
+        }
+      ],
+      "cards": [],
+      "evaluation": "Проверять смысл и сохранение условий, а не дословный ответ. Ошибка на любом ходе проваливает данный открытый пример."
+    },
+    {
+      "id": "ON05",
+      "branch": "housing",
+      "role": "child",
+      "category": "negated_unsupported_intent",
+      "purpose": "Отрицание комнаты сохраняет запрос целой квартиры.",
+      "initial_context": "Новая сессия, соответствующая поисковая ветка; профиль пустой. Источники только локальные фикстуры.",
+      "turns": [
+        {
+          "user": "Астрахань. Комната мне не нужна, хочу снимать отдельную квартиру длительно; предел аренды 24 тысячи рублей в месяц.",
+          "expected": {
+            "meaning": "search",
+            "source_allowed": true,
+            "saved_conditions": {
+              "place": "Астрахань",
+              "budget_month_rub": 24000,
+              "transaction": "rent_long",
+              "property_type": "apartment"
+            },
+            "active_unverified_wishes": [],
+            "mandatory_caveats": []
+          }
+        }
+      ],
+      "cards": [],
+      "evaluation": "Проверять смысл и сохранение условий, а не дословный ответ. Ошибка на любом ходе проваливает данный открытый пример."
+    },
+    {
+      "id": "ON06",
+      "branch": "housing",
+      "role": "child",
+      "category": "negated_unsupported_intent",
+      "purpose": "Упоминание посуточного формата в отрицании не делает его намерением.",
+      "initial_context": "Новая сессия, соответствующая поисковая ветка; профиль пустой. Источники только локальные фикстуры.",
+      "turns": [
+        {
+          "user": "На сутки или на выходные ничего не ищу. Нужна квартира надолго в Саранске, арендная плата до 26 тысяч рублей за месяц.",
+          "expected": {
+            "meaning": "search",
+            "source_allowed": true,
+            "saved_conditions": {
+              "place": "Саранск",
+              "budget_month_rub": 26000,
+              "transaction": "rent_long",
+              "property_type": "apartment"
+            },
+            "active_unverified_wishes": [],
+            "mandatory_caveats": []
+          }
+        }
+      ],
+      "cards": [],
+      "evaluation": "Проверять смысл и сохранение условий, а не дословный ответ. Ошибка на любом ходе проваливает данный открытый пример."
+    },
+    {
+      "id": "ON07",
+      "branch": "housing",
+      "role": "child",
+      "category": "explicit_text_consent",
+      "purpose": "Прямое текстовое согласие должно запускать разрешённый поиск.",
+      "initial_context": "Новая сессия, соответствующая поисковая ветка; профиль пустой. Источники только локальные фикстуры.",
+      "turns": [
+        {
+          "user": "Ищу квартиру надолго в Калуге за аренду до 33 тысяч ежемесячно. Нужен балкон с остеклением.",
+          "expected": {
+            "meaning": "request_consent",
+            "source_allowed": false,
+            "saved_conditions": {
+              "place": "Калуга",
+              "budget_month_rub": 33000
+            },
+            "active_unverified_wishes": [
+              "балкон с остеклением"
+            ],
+            "mandatory_caveats": []
+          }
+        },
+        {
+          "user": "Понимаю, что остекление проверить нельзя. Разрешаю подобрать объявления по Калуге и арендному пределу 33 тысячи, остекление выясню самостоятельно.",
+          "expected": {
+            "meaning": "search",
+            "source_allowed": true,
+            "saved_conditions": {
+              "place": "Калуга",
+              "budget_month_rub": 33000
+            },
+            "active_unverified_wishes": [
+              "балкон с остеклением"
+            ],
+            "mandatory_caveats": [
+              "Балкон с остеклением не проверен."
+            ]
+          }
+        }
+      ],
+      "cards": [],
+      "evaluation": "Проверять смысл и сохранение условий, а не дословный ответ. Ошибка на любом ходе проваливает данный открытый пример."
+    },
+    {
+      "id": "ON08",
+      "branch": "work",
+      "role": "child",
+      "category": "explicit_text_consent",
+      "purpose": "Текстовое согласие сохраняет непроверенное пожелание как оговорку.",
+      "initial_context": "Новая сессия, соответствующая поисковая ветка; профиль пустой. Источники только локальные фикстуры.",
+      "turns": [
+        {
+          "user": "Мне 22, ищу работу переплётчиком в Челябинске. Хочу, чтобы в мастерской не включали радио.",
+          "expected": {
+            "meaning": "request_consent",
+            "source_allowed": false,
+            "saved_conditions": {
+              "place": "Челябинск",
+              "age": 22,
+              "profession": "переплётчик"
+            },
+            "active_unverified_wishes": [
+              "в мастерской не включают радио"
+            ],
+            "mandatory_caveats": []
+          }
+        },
+        {
+          "user": "Подбор без проверки радио меня устраивает, запускайте его с указанными городом и профессией. Это пожелание я потом уточню у работодателя.",
+          "expected": {
+            "meaning": "search",
+            "source_allowed": true,
+            "saved_conditions": {
+              "place": "Челябинск",
+              "age": 22,
+              "profession": "переплётчик"
+            },
+            "active_unverified_wishes": [
+              "в мастерской не включают радио"
+            ],
+            "mandatory_caveats": [
+              "Отсутствие радио не подтверждено."
+            ]
+          }
+        }
+      ],
+      "cards": [],
+      "evaluation": "Проверять смысл и сохранение условий, а не дословный ответ. Ошибка на любом ходе проваливает данный открытый пример."
+    },
+    {
+      "id": "ON09",
+      "branch": "housing",
+      "role": "child",
+      "category": "explicit_text_consent",
+      "purpose": "Ознакомление с ограничением не равно согласию; последующее согласие действует.",
+      "initial_context": "Новая сессия, соответствующая поисковая ветка; профиль пустой. Источники только локальные фикстуры.",
+      "turns": [
+        {
+          "user": "В Ярославле нужна квартира на длительный срок, аренда максимум 36 тысяч в месяц. Хочу кухонную плиту на газе.",
+          "expected": {
+            "meaning": "request_consent",
+            "source_allowed": false,
+            "saved_conditions": {
+              "place": "Ярославль",
+              "budget_month_rub": 36000
+            },
+            "active_unverified_wishes": [
+              "газовая кухонная плита"
+            ],
+            "mandatory_caveats": []
+          }
+        },
+        {
+          "user": "Ограничение прочитал. Пока не начинайте, я ещё решаю.",
+          "expected": {
+            "meaning": "stop",
+            "source_allowed": false,
+            "saved_conditions": {
+              "place": "Ярославль",
+              "budget_month_rub": 36000
+            },
+            "active_unverified_wishes": [
+              "газовая кухонная плита"
+            ],
+            "mandatory_caveats": []
+          }
+        },
+        {
+          "user": "Решил: можно начинать по городу и месячной аренде. Газовую плиту не проверяйте, я выясню это сам.",
+          "expected": {
+            "meaning": "search",
+            "source_allowed": true,
+            "saved_conditions": {
+              "place": "Ярославль",
+              "budget_month_rub": 36000
+            },
+            "active_unverified_wishes": [
+              "газовая кухонная плита"
+            ],
+            "mandatory_caveats": [
+              "Газовая плита не проверена."
+            ]
+          }
+        }
+      ],
+      "cards": [],
+      "evaluation": "Проверять смысл и сохранение условий, а не дословный ответ. Ошибка на любом ходе проваливает данный открытый пример."
+    },
+    {
+      "id": "ON10",
+      "branch": "housing",
+      "role": "child",
+      "category": "remove_one_wish",
+      "purpose": "Снятие одного требования не стирает два оставшихся.",
+      "initial_context": "Новая сессия, соответствующая поисковая ветка; профиль пустой. Источники только локальные фикстуры.",
+      "turns": [
+        {
+          "user": "Квартира в Костроме на долгий срок, аренда до 29 тысяч в месяц. Важны застеклённый балкон, газовая плита и место под велосипед.",
+          "expected": {
+            "meaning": "request_consent",
+            "source_allowed": false,
+            "saved_conditions": {
+              "place": "Кострома",
+              "budget_month_rub": 29000
+            },
+            "active_unverified_wishes": [
+              "застеклённый балкон",
+              "газовая плита",
+              "место под велосипед"
+            ],
+            "mandatory_caveats": []
+          }
+        },
+        {
+          "user": "Требование к плите отменяю. Балкон и место для велосипеда остаются; разрешаю искать без проверки этих двух пожеланий.",
+          "expected": {
+            "meaning": "search",
+            "source_allowed": true,
+            "saved_conditions": {
+              "place": "Кострома",
+              "budget_month_rub": 29000
+            },
+            "active_unverified_wishes": [
+              "застеклённый балкон",
+              "место под велосипед"
+            ],
+            "mandatory_caveats": [
+              "Оба оставшихся пожелания не проверены."
+            ]
+          }
+        }
+      ],
+      "cards": [],
+      "evaluation": "Проверять смысл и сохранение условий, а не дословный ответ. Ошибка на любом ходе проваливает данный открытый пример."
+    },
+    {
+      "id": "ON11",
+      "branch": "work",
+      "role": "child",
+      "category": "remove_one_wish",
+      "purpose": "Профессия и поддерживаемый график сохраняются при снятии одного пожелания.",
+      "initial_context": "Новая сессия, соответствующая поисковая ветка; профиль пустой. Источники только локальные фикстуры.",
+      "turns": [
+        {
+          "user": "В Челябинске ищу работу переплётчиком, мне 24. Только полный рабочий день. Ещё хочу шкафчик для вещей, отсутствие радио и обед после двух часов.",
+          "expected": {
+            "meaning": "request_consent",
+            "source_allowed": false,
+            "saved_conditions": {
+              "place": "Челябинск",
+              "age": 24,
+              "profession": "переплётчик",
+              "schedule": "full_time"
+            },
+            "active_unverified_wishes": [
+              "шкафчик для вещей",
+              "отсутствие радио",
+              "обед после двух часов"
+            ],
+            "mandatory_caveats": []
+          }
+        },
+        {
+          "user": "Время обеда больше не важно. Шкафчик и отсутствие радио оставляю, но согласен, что поиск их не проверяет. Профессию и полный день не меняю.",
+          "expected": {
+            "meaning": "search",
+            "source_allowed": true,
+            "saved_conditions": {
+              "place": "Челябинск",
+              "age": 24,
+              "profession": "переплётчик",
+              "schedule": "full_time"
+            },
+            "active_unverified_wishes": [
+              "шкафчик для вещей",
+              "отсутствие радио"
+            ],
+            "mandatory_caveats": [
+              "Шкафчик и отсутствие радио не подтверждены."
+            ]
+          }
+        }
+      ],
+      "cards": [],
+      "evaluation": "Проверять смысл и сохранение условий, а не дословный ответ. Ошибка на любом ходе проваливает данный открытый пример."
+    },
+    {
+      "id": "ON12",
+      "branch": "housing",
+      "role": "child",
+      "category": "remove_one_wish",
+      "purpose": "Правка бюджета и снятие пожелания не должны удалять другое пожелание.",
+      "initial_context": "Новая сессия, соответствующая поисковая ветка; профиль пустой. Источники только локальные фикстуры.",
+      "turns": [
+        {
+          "user": "В Рязани сниму квартиру надолго за аренду до 28 тысяч рублей в месяц. Нужны рабочий стол и застеклённый балкон.",
+          "expected": {
+            "meaning": "request_consent",
+            "source_allowed": false,
+            "saved_conditions": {
+              "place": "Рязань",
+              "budget_month_rub": 28000
+            },
+            "active_unverified_wishes": [
+              "рабочий стол",
+              "застеклённый балкон"
+            ],
+            "mandatory_caveats": []
+          }
+        },
+        {
+          "user": "Балкон больше не нужен. Стол оставляю, предел самой аренды повышаю до 30 тысяч в месяц.",
+          "expected": {
+            "meaning": "request_consent",
+            "source_allowed": false,
+            "saved_conditions": {
+              "place": "Рязань",
+              "budget_month_rub": 30000
+            },
+            "active_unverified_wishes": [
+              "рабочий стол"
+            ],
+            "mandatory_caveats": []
+          }
+        },
+        {
+          "user": "Даю согласие на подбор без проверки стола по Рязани с новым месячным пределом.",
+          "expected": {
+            "meaning": "search",
+            "source_allowed": true,
+            "saved_conditions": {
+              "place": "Рязань",
+              "budget_month_rub": 30000
+            },
+            "active_unverified_wishes": [
+              "рабочий стол"
+            ],
+            "mandatory_caveats": [
+              "Наличие рабочего стола не проверено."
+            ]
+          }
+        }
+      ],
+      "cards": [],
+      "evaluation": "Проверять смысл и сохранение условий, а не дословный ответ. Ошибка на любом ходе проваливает данный открытый пример."
+    },
+    {
+      "id": "ON13",
+      "branch": "work",
+      "role": "child",
+      "category": "optional_profession_absent",
+      "purpose": "Отсутствующая профессия не становится обязательным вопросом.",
+      "initial_context": "Новая сессия, соответствующая поисковая ветка; профиль пустой. Источники только локальные фикстуры.",
+      "turns": [
+        {
+          "user": "Мне 19 лет, ищу работу в Петрозаводске. Рассмотрю любые должности, опыта пока нет.",
+          "expected": {
+            "meaning": "search",
+            "source_allowed": true,
+            "saved_conditions": {
+              "place": "Петрозаводск",
+              "age": 19,
+              "profession": null,
+              "experience_years": 0
+            },
+            "active_unverified_wishes": [],
+            "mandatory_caveats": []
+          }
+        }
+      ],
+      "cards": [],
+      "evaluation": "Проверять смысл и сохранение условий, а не дословный ответ. Ошибка на любом ходе проваливает данный открытый пример."
+    },
+    {
+      "id": "ON14",
+      "branch": "work",
+      "role": "child",
+      "category": "optional_profession_absent",
+      "purpose": "Явное снятие профессии сохраняет остальные фильтры.",
+      "initial_context": "Новая сессия, соответствующая поисковая ветка; профиль пустой. Источники только локальные фикстуры.",
+      "turns": [
+        {
+          "user": "Мне 25. В Кургане ищу работу реставратором мебели, нужен неполный рабочий день.",
+          "expected": {
+            "meaning": "search",
+            "source_allowed": true,
+            "saved_conditions": {
+              "place": "Курган",
+              "age": 25,
+              "profession": "реставратор мебели",
+              "schedule": "part_time"
+            },
+            "active_unverified_wishes": [],
+            "mandatory_caveats": []
+          }
+        },
+        {
+          "user": "Название должности больше не ограничиваю. Город и неполный рабочий день сохраняются; покажите доступные варианты.",
+          "expected": {
+            "meaning": "search",
+            "source_allowed": true,
+            "saved_conditions": {
+              "place": "Курган",
+              "age": 25,
+              "profession": null,
+              "schedule": "part_time"
+            },
+            "active_unverified_wishes": [],
+            "mandatory_caveats": []
+          }
+        }
+      ],
+      "cards": [],
+      "evaluation": "Проверять смысл и сохранение условий, а не дословный ответ. Ошибка на любом ходе проваливает данный открытый пример."
+    },
+    {
+      "id": "ON15",
+      "branch": "work",
+      "role": "parent",
+      "category": "optional_profession_absent",
+      "purpose": "В родительской роли необязательная профессия не запрашивается ради анкеты.",
+      "initial_context": "Новая сессия, соответствующая поисковая ветка; профиль пустой. Источники только локальные фикстуры.",
+      "turns": [
+        {
+          "user": "Помогаю дочери найти работу в Смоленске. Ей 20 лет, профессионального опыта нет. Конкретную должность мы не выбирали, подходят разные.",
+          "expected": {
+            "meaning": "search",
+            "source_allowed": true,
+            "saved_conditions": {
+              "place": "Смоленск",
+              "recipient": "child",
+              "age": 20,
+              "experience_years": 0,
+              "profession": null
+            },
+            "active_unverified_wishes": [],
+            "mandatory_caveats": []
+          }
+        }
+      ],
+      "cards": [],
+      "evaluation": "Проверять смысл и сохранение условий, а не дословный ответ. Ошибка на любом ходе проваливает данный открытый пример."
+    },
+    {
+      "id": "ON16",
+      "branch": "housing",
+      "role": "child",
+      "category": "monthly_rent_vs_one_off",
+      "purpose": "Отдельные накопления на переезд не складываются с месячным лимитом.",
+      "initial_context": "Новая сессия, соответствующая поисковая ветка; профиль пустой. Источники только локальные фикстуры.",
+      "turns": [
+        {
+          "user": "Хочу арендовать квартиру надолго в Орске. Потолок самой аренды — 22 тысячи рублей за месяц. Ещё у меня отложено 18 тысяч на переезд, но это не условие поиска и не прибавка к арендному лимиту.",
+          "expected": {
+            "meaning": "search",
+            "source_allowed": true,
+            "saved_conditions": {
+              "place": "Орск",
+              "budget_month_rub": 22000
+            },
+            "active_unverified_wishes": [],
+            "mandatory_caveats": []
+          }
+        }
+      ],
+      "cards": [],
+      "evaluation": "Проверять смысл и сохранение условий, а не дословный ответ. Ошибка на любом ходе проваливает данный открытый пример."
+    },
+    {
+      "id": "ON17",
+      "branch": "housing",
+      "role": "child",
+      "category": "monthly_rent_vs_one_off",
+      "purpose": "Общая сумма при въезде не подменяет неизвестную месячную плату.",
+      "initial_context": "Новая сессия, соответствующая поисковая ветка; профиль пустой. Источники только локальные фикстуры.",
+      "turns": [
+        {
+          "user": "Для квартиры в Абакане на долгий срок могу выделить 75 тысяч при заселении, включая разовый платёж хозяину.",
+          "expected": {
+            "meaning": "clarify_monthly_rent",
+            "source_allowed": false,
+            "saved_conditions": {
+              "place": "Абакан",
+              "budget_month_rub": null
+            },
+            "active_unverified_wishes": [],
+            "mandatory_caveats": []
+          }
+        },
+        {
+          "user": "Месячную аренду ограничим 32 тысячами рублей. Лимит платежей при въезде пока снимаю, к поиску его не применяем.",
+          "expected": {
+            "meaning": "search",
+            "source_allowed": true,
+            "saved_conditions": {
+              "place": "Абакан",
+              "budget_month_rub": 32000
+            },
+            "active_unverified_wishes": [],
+            "mandatory_caveats": []
+          }
+        }
+      ],
+      "cards": [],
+      "evaluation": "Проверять смысл и сохранение условий, а не дословный ответ. Ошибка на любом ходе проваливает данный открытый пример."
+    },
+    {
+      "id": "ON18",
+      "branch": "housing",
+      "role": "child",
+      "category": "monthly_rent_vs_one_off",
+      "purpose": "Нельзя вычитать коммунальные платежи без данных или забывать общий предел.",
+      "initial_context": "Новая сессия, соответствующая поисковая ветка; профиль пустой. Источники только локальные фикстуры.",
+      "turns": [
+        {
+          "user": "В Улан-Удэ нужна квартира надолго. На аренду вместе с коммунальными услугами хочу тратить максимум 34 тысячи рублей каждый месяц.",
+          "expected": {
+            "meaning": "clarify_monthly_rent",
+            "source_allowed": false,
+            "saved_conditions": {
+              "place": "Улан-Удэ",
+              "budget_month_rub": null
+            },
+            "active_unverified_wishes": [
+              "аренда вместе с коммунальными услугами не выше 34000 рублей в месяц"
+            ],
+            "mandatory_caveats": []
+          }
+        },
+        {
+          "user": "Для самой аренды ставлю потолок 30 тысяч рублей за месяц. Общий предел с коммунальными оставляю пожеланием и разрешаю искать без его проверки.",
+          "expected": {
+            "meaning": "search",
+            "source_allowed": true,
+            "saved_conditions": {
+              "place": "Улан-Удэ",
+              "budget_month_rub": 30000
+            },
+            "active_unverified_wishes": [
+              "аренда вместе с коммунальными услугами не выше 34000 рублей в месяц"
+            ],
+            "mandatory_caveats": [
+              "Общий расход с коммунальными услугами не подтверждён."
+            ]
+          }
+        }
+      ],
+      "cards": [],
+      "evaluation": "Проверять смысл и сохранение условий, а не дословный ответ. Ошибка на любом ходе проваливает данный открытый пример."
+    }
+  ],
+  "schema_notes": {
+    "saved_conditions": "Проверяемые смысловые утверждения, не полная копия runtime state. None для профессии означает отсутствие ограничения; None для месячного бюджета означает, что он ещё не установлен. Остальные ранее названные условия сохраняются, новые фильтры не выдумываются.",
+    "source_allowed": "false запрещает источник на данном ходе; true соответствует ожидаемому запуску поиска. Все обращения только к локальным фикстурам.",
+    "clarify_monthly_rent": "Уточнить именно месячную арендную плату, сохранив известное место и отдельные требования к общему расходу.",
+    "cards": "Применяются к последнему ходу данного случая, на котором ожидается search. Native payload передаётся через обычный адаптер. Нет настоящих объявлений или реальных адресатов."
+  }
+}

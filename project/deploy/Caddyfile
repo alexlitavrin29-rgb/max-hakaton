@@ -1,0 +1,27 @@
+135-106-229-210.sslip.io {
+    encode gzip
+    reverse_proxy miniapp:8766
+}
+
+135.106.229.210.nip.io {
+    encode gzip
+    reverse_proxy miniapp:8766
+}
+
+admin.135.106.229.210.nip.io {
+    basic_auth {
+        owner {$ADMIN_PASSWORD_HASH}
+    }
+    reverse_proxy admin:8765 {
+        header_up Host localhost
+    }
+}
+
+admin.135-106-229-210.sslip.io {
+    basic_auth {
+        owner {$ADMIN_PASSWORD_HASH}
+    }
+    reverse_proxy admin:8765 {
+        header_up Host localhost
+    }
+}

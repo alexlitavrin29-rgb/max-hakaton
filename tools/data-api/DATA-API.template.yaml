@@ -1,0 +1,81 @@
+# DATA-API 1.0
+# Do not place passwords, tokens, API keys or other real secrets in this file.
+
+schemaVersion: "1.0"
+
+solution:
+  name: "<solution name>"
+  teamId: "<team id>"
+
+api:
+  baseUrl: "https://api.example.org"
+  openapi: "./openapi.yaml"
+  defaultHeaders:
+    Accept: "application/json"
+
+checks:
+  - id: "health"
+    name: "API availability"
+    description: "Базовая проверка доступности"
+    method: "GET"
+    path: "/health"
+    role: "public"
+    expected:
+      statusCodes: [200]
+      contentType: "application/json"
+      requiredFields:
+        - "status"
+    timeoutMs: 5000
+    repeatable: true
+
+  - id: "create-item"
+    name: "Создайте тестовый объект"
+    method: "POST"
+    path: "/api/items"
+    role: "user"
+    request:
+      headers:
+        Content-Type: "application/json"
+      body:
+        name: "Проверка тестовх данных"
+    expected:
+      statusCodes: [200, 201]
+      contentType: "application/json"
+      requiredFields:
+        - "id"
+        - "name"
+    timeoutMs: 5000
+    repeatable: false
+    extract:
+      itemId: "$.id"
+
+  - id: "get-item"
+    name: "Чтение созданных данных"
+    method: "GET"
+    path: "/api/items/{itemId}"
+    role: "user"
+    dependsOn:
+      - "create-item"
+    request:
+      path:
+        itemId: "${itemId}"
+    expected:
+      statusCodes: [200]
+      contentType: "application/json"
+      requiredFields:
+        - "id"
+        - "name"
+    timeoutMs: 5000
+    repeatable: true
+
+cleanup:
+  - id: "delete-item"
+    method: "DELETE"
+    path: "/api/items/{itemId}"
+    role: "user"
+    request:
+      path:
+        itemId: "${itemId}"
+    expected:
+      statusCodes: [200, 204, 404]
+    timeoutMs: 5000
