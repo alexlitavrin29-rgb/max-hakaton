@@ -2,6 +2,8 @@ from datetime import datetime, timezone
 
 from project.llm.services.flow import FlowSession
 from project.llm.services.session_codec import decode_flow, encode_flow
+from project.llm.services.vacancies import Vacancy, VacancyContact
+import json
 
 
 def test_flow_state_round_trip_and_version_rejection():
@@ -26,3 +28,16 @@ def test_flow_state_round_trip_and_version_rejection():
         pass
     else:
         assert False, 'Unknown state schema accepted'
+
+
+def test_work_page_round_trip_keeps_remaining_vacancies_and_seen_ids():
+    vacancy = Vacancy(id='42', source='hh', title='Медбрат', company='Тест',
+                      salary_from=None, salary_to=None, region='Москва', city='Москва',
+                      address=None, experience=None, accommodation=None,
+                      requirements=None, responsibilities=None, url='https://example.org/42',
+                      contacts=(VacancyContact(kind='phone', value='123'),),
+                      work_formats=('remote',))
+    state = FlowSession(buffer=[(vacancy, ['опыт'])], seen={('hh', '42')})
+    restored = decode_flow(json.loads(json.dumps(encode_flow(state), ensure_ascii=False)))
+    assert restored.buffer == [(vacancy, ['опыт'])]
+    assert restored.seen == {('hh', '42')}
