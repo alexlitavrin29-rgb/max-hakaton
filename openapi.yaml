@@ -776,11 +776,57 @@
             "description": "Successful Response",
             "content": {
               "application/json": {
-                "schema": {}
+                "schema": {
+                  "type": "object",
+                  "required": [
+                    "deleted"
+                  ],
+                  "properties": {
+                    "deleted": {
+                      "type": "boolean",
+                      "const": true
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Сеанс завершён",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Чужой Origin",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          },
+          "413": {
+            "description": "Тело больше 24000 байт",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
               }
             }
           }
-        }
+        },
+        "security": [
+          {
+            "MaxSession": []
+          }
+        ]
       }
     },
     "/api/action": {
@@ -1201,7 +1247,7 @@
       "MaxSession": {
         "type": "http",
         "scheme": "bearer",
-        "description": "Токен из POST /api/session с подписанным MAX init_data. До 1 часа бездействия; исчезает при перезапуске. Пароль MAX и токен бота не передаются."
+        "description": "Токен из POST /api/session с подписанным MAX init_data. До 1 часа бездействия; сохраняется в PostgreSQL при перезапуске и отзывается при удалении аккаунта. Пароль MAX и токен бота не передаются."
       }
     }
   },

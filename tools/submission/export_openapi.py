@@ -19,7 +19,8 @@ def contract():
     document['components']['securitySchemes'] = {
         'MaxSession': {'type': 'http', 'scheme': 'bearer', 'description':
             'Токен из POST /api/session с подписанным MAX init_data. '
-            'До 1 часа бездействия; исчезает при перезапуске. Пароль MAX и токен бота не передаются.'}}
+            'До 1 часа бездействия; сохраняется в PostgreSQL при перезапуске и отзывается '
+            'при удалении аккаунта. Пароль MAX и токен бота не передаются.'}}
     schemas = document['components']['schemas']
     obj = lambda required, properties: dict(type='object', required=required, properties=properties)
     string = {'type': 'string'}
@@ -46,6 +47,7 @@ def contract():
         ('/api/favorites', 'get'): obj(['cards'], {'cards': array(ref('Card'))}),
         ('/api/favorites', 'post'): obj(['cards'], {'cards': array(ref('Card'))}),
         ('/api/material', 'post'): obj(['card', 'saved'], {'card': ref('Card'), 'saved': {'type': 'boolean'}}),
+        ('/api/account', 'delete'): obj(['deleted'], {'deleted': {'type': 'boolean', 'const': True}}),
         ('/api/help/search', 'get'): obj(['choices', 'total'], {'choices': array(ref('Place')), 'total': {'type': 'integer'}}),
         ('/api/help/summary', 'get'): obj(['place', 'city_total', 'region_total', 'categories'], {
             'place': ref('Place'), 'city_total': {'type': 'integer'}, 'region_total': {'type': 'integer'},
@@ -60,6 +62,7 @@ def contract():
         '/api/action': {400: 'Нужно ровно одно действие и выбранный раздел', 401: 'Сеанс завершён', 409: 'Устаревшая кнопка или тот же Idempotency-Key с другим действием', 429: 'Действие уже идёт или интервал меньше 0,4 с', 503: 'Очередь, тайм-аут или ошибка обработки'},
         '/api/favorites': {401: 'Сеанс завершён', 404: 'Материал снят', 409: 'Карточка не открывалась в этом сеансе'},
         '/api/material': {401: 'Сеанс завершён', 404: 'Материал недоступен'},
+        '/api/account': {401: 'Сеанс завершён'},
         '/api/help/summary': {404: 'Место не найдено', 409: 'Нужны город и регион'},
         '/api/help/points': {404: 'Место не найдено', 409: 'Нужно уточнение', 422: 'Недопустимый параметр'},
         '/api/help/points/{identifier}': {404: 'Карточка не найдена'},
@@ -67,13 +70,13 @@ def contract():
     for (path, method), schema in responses.items():
         operation = document['paths'][path][method]
         operation['responses']['200']['content'] = {'application/json': {'schema': schema}}
-        operation['security'] = [{'MaxSession': []}] if path in ('/api/action', '/api/favorites', '/api/material') else []
+        operation['security'] = [{'MaxSession': []}] if path in ('/api/action', '/api/favorites', '/api/material', '/api/account') else []
         for code, description in errors.get(path, {}).items():
             if path == '/api/favorites' and method == 'get' and code != 401:
                 continue
             operation['responses'][str(code)] = {'description': description,
                 'content': {'application/json': {'schema': ref('Error')}}}
-        if method == 'post':
+        if method in ('post', 'delete'):
             for code, description in ((403, 'Чужой Origin'), (413, 'Тело больше 24000 байт')):
                 operation['responses'][str(code)] = {'description': description,
                     'content': {'application/json': {'schema': ref('Error')}}}
