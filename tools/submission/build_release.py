@@ -12,7 +12,7 @@ ROOT = Path(__file__).resolve().parents[2]
 SKIP = {'__pycache__', '.pytest_cache', '.testdeps', '.git', 'cache', 'logs', 'backups', 'backup', 'node_modules'}
 HISTORICAL_EXECUTABLES = {'historical_repair_dialogue_replay.py', 'replay_current_v1.json'}
 SUBMISSION_DOCS = {'ACCESS.md', 'DATA-POLICY.md', 'MISSING.md', 'PRODUCT.md',
-                   'TECHNICAL.md', 'VERIFICATION.md', 'LOAD.md',
+                   'TECHNICAL.md', 'VERIFICATION.md', 'LOAD.md', 'HOUSING-2026-09-30.md',
                    'load-results.json', 'load-monitor-summary.json'}
 SUFFIXES = {'.py', '.json', '.jsonl', '.csv', '.md', '.txt', '.yaml', '.yml',
             '.html', '.css', '.js', '.cjs', '.svg', '.crt', '.gz', '.sh', '.service', '.timer', '.pdf', '.pptx'}
@@ -85,7 +85,7 @@ def build(destination):
     manifest = {path.relative_to(destination).as_posix(): hashlib.sha256(path.read_bytes()).hexdigest()
                 for path in sorted(destination.rglob('*')) if path.is_file()}
     (destination / 'MANIFEST.sha256.json').write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
-    (destination / 'RELEASE.json').write_text(json.dumps(dict(version='submission-2026-09-28-r5-verified',
+    (destination / 'RELEASE.json').write_text(json.dumps(dict(version='submission-2026-09-30-housing-v10',
         scenario_version=json.loads((destination / 'submission/scenario.json').read_text(encoding='utf-8-sig'))['published_version'], file_count=len(manifest), manifest_sha256=hashlib.sha256(
             (destination / 'MANIFEST.sha256.json').read_bytes()).hexdigest()), indent=2) + '\n', encoding='utf-8')
     return destination
