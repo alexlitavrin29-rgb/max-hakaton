@@ -17,7 +17,7 @@ def test_only_housing_content_changes_and_reapply_is_safe():
     original = baseline()
     result = configure(original)
     assert configure(result) == result
-    allowed = {'text', 'adult_text', 'tasks', 'sources', 'content_status', 'editorial_sources', 'editorial_note'}
+    allowed = {'text', 'adult_text', 'tasks', 'sources', 'content_status', 'editorial_sources', 'editorial_note', 'format'}
     for before, after in zip(original['nodes'], result['nodes']):
         if before['branch'] != 'housing':
             assert before == after
@@ -41,15 +41,20 @@ def test_chat_and_saved_cards_expose_sources_and_navigation():
             assert session.node == node_id
             assert node['text'] in replies[0]['text']
             buttons = [b for r in replies for a in r.get('attachments', []) for row in a['payload']['buttons'] for b in row]
-            expected = {config['sources'][s]['url'] for s in node['sources']}
-            assert expected <= {b.get('url') for b in buttons}
+            expected = {config['sources'][s]['url'] for s in node['editorial_sources']}
+            assert replies[0]['format'] == 'markdown'
+            assert not node['sources']
+            assert not expected.intersection(b.get('url') for b in buttons)
+            for key in node['editorial_sources']:
+                source = config['sources'][key]
+                assert '[' + source['title'] + '](' + source['url'] + ')' in replies[0]['text']
             assert any(b.get('payload') for b in buttons), node_id
             if node_id in TITLES:
                 card = material(config, node_id)
-                assert card and expected <= {a['url'] for a in card['actions']}
+                assert card and not expected.intersection(a['url'] for a in card['actions'])
                 assert card['text'] == node['text']
                 altered = deepcopy(config)
-                altered['sources'][node['sources'][0]]['url'] += '?updated=1'
+                next(n for n in altered['nodes'] if n['id'] == node_id)['text'] += '\nОбновлено'
                 assert material(altered, node_id)['content_hash'] != card['content_hash']
                 count += 1
         assert count >= 33
@@ -61,8 +66,8 @@ def test_housing_has_no_abandonment_disclaimer_or_missing_source():
     for node in config['nodes']:
         if node['branch'] != 'housing':
             continue
-        assert node.get('sources'), node['id']
+        assert node.get('editorial_sources') and not node['sources'], node['id']
         for text in [node.get('text', ''), node.get('adult_text', '')]:
             assert 'не несёт ответственности' not in text.lower()
             assert 'не несет ответственности' not in text.lower()
-        assert all(config['sources'][s]['url'].startswith('https://') for s in node['sources'])
+        assert all(config['sources'][s]['url'].startswith('https://') for s in node['editorial_sources'])

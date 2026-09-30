@@ -85,7 +85,7 @@ def build(destination):
     manifest = {path.relative_to(destination).as_posix(): hashlib.sha256(path.read_bytes()).hexdigest()
                 for path in sorted(destination.rglob('*')) if path.is_file()}
     (destination / 'MANIFEST.sha256.json').write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
-    (destination / 'RELEASE.json').write_text(json.dumps(dict(version='submission-2026-09-30-housing-v10',
+    (destination / 'RELEASE.json').write_text(json.dumps(dict(version='submission-2026-09-30-housing-v11',
         scenario_version=json.loads((destination / 'submission/scenario.json').read_text(encoding='utf-8-sig'))['published_version'], file_count=len(manifest), manifest_sha256=hashlib.sha256(
             (destination / 'MANIFEST.sha256.json').read_bytes()).hexdigest()), indent=2) + '\n', encoding='utf-8')
     return destination

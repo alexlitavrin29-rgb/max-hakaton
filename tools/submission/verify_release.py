@@ -77,7 +77,7 @@ def check_bundle_clone(tree):
 
 def main():
     source = json.loads((ROOT / 'submission/scenario.json').read_text(encoding='utf-8'))
-    assert source['published_version'] == 10 and source['config']['rules']['child_only'] is True
+    assert source['published_version'] == 11 and source['config']['rules']['child_only'] is True
     assert (ROOT / 'submission/.env').exists(), 'Copy submission/.env.example to submission/.env first'
     project = 'tochka-r5-' + uuid.uuid4().hex[:8]
     stage = (ROOT / '.tmp' / ('release-check-' + uuid.uuid4().hex[:8])).resolve()

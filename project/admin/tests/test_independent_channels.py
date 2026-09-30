@@ -26,7 +26,7 @@ def test_preview_endpoint_and_max_receiver_share_snapshot(monkeypatch,branch):
     snapshot=json.loads(SCENARIO.read_text(encoding='utf-8'))
     cfg=snapshot['config']
     revision=snapshot['published_version']
-    assert revision==10 and cfg['rules']['child_only'] is True
+    assert revision==11 and cfg['rules']['child_only'] is True
     class Store:
         async def read(self,published=False):return dict(config=copy.deepcopy(cfg),revision=revision,published_id=revision)
         async def event(self,*args):pass
@@ -74,12 +74,12 @@ def test_preview_endpoint_and_max_receiver_share_snapshot(monkeypatch,branch):
 
 
 @pytest.mark.parametrize('branch',['work','rental'])
-def test_publication10_navigation_matches_preview_and_max(monkeypatch,branch):
+def test_publication11_navigation_matches_preview_and_max(monkeypatch,branch):
     snapshot=json.loads(SCENARIO.read_text(encoding='utf-8'))
     cfg=snapshot['config']
-    assert snapshot['published_version']==10 and cfg['rules']['child_only'] is True
+    assert snapshot['published_version']==11 and cfg['rules']['child_only'] is True
     class Store:
-        async def read(self,published=False):return dict(config=copy.deepcopy(cfg),revision=10,published_id=10)
+        async def read(self,published=False):return dict(config=copy.deepcopy(cfg),revision=11,published_id=11)
         async def event(self,*args):pass
     sent=[]
     from project.llm.tests.fake_max import RecordingMax
@@ -102,6 +102,6 @@ def test_publication10_navigation_matches_preview_and_max(monkeypatch,branch):
                 await runner.process(event)
                 assert sent==preview['replies']
                 assert published.engine.session(99002).branch==preview['branch']
-                assert preview['revision']==10
+                assert preview['revision']==11
     asyncio.run(run())
 

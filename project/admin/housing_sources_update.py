@@ -328,5 +328,16 @@ def configure(original):
                     if material['id'] == 'material_housing_rights' else ['hq_hq_sale_owner', 'hq_hq_sale_let'])
             material.update(text='\n\n'.join(nodes[k]['text'] for k in keys),
                 sources=list(dict.fromkeys(s for k in keys for s in nodes[k]['sources'])), checked=DATE)
+    # MAX and both web clients already support Markdown links in message text.
+    for node in nodes.values():
+        if node['branch'] != 'housing':
+            continue
+        refs = list(node['sources'])
+        links = '\n'.join('• [' + config['sources'][key]['title'] + '](' + config['sources'][key]['url'] + ')' for key in refs)
+        for field in ('text', 'adult_text'):
+            text = node.get(field, '').split('\n\nПолезные ссылки:\n')[0]
+            text = text.replace('Кнопки закона и помощи — ниже.', 'Ссылки на закон и помощь — ниже.').replace('кнопки официальных сервисов и законов', 'ссылки на официальные сервисы и законы')
+            node[field] = text + '\n\nПолезные ссылки:\n' + links
+        node.update(format='markdown', sources=[], editorial_sources=refs)
     validate(config)
     return config
